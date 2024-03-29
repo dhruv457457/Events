@@ -17,7 +17,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:#952affe1;
+    background-color:#da9629c6;
+    
     height: 50px;
 
     
@@ -46,7 +47,7 @@ nav {
 main {
     width: 100%;
     height: 400px;
-    background-color:#8a2be2;
+    background-color:#da9629;
     display: flex;
     justify-content: center;
     align-items: center;
