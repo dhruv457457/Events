@@ -96,7 +96,7 @@ main {
 
 h1.ser {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
   /* cards from here  */
@@ -104,7 +104,7 @@ h1.ser {
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    padding-top: 50px;
+    padding-top: 10px;
     justify-content: center;
     gap: 30px;
     background-color: whitesmoke;
@@ -161,7 +161,7 @@ h1.ser {
 /* imp links from here  */
 .imp{
     width: 100%;
-    height: 370px;
+    height: 340px;
     background-color: whitesmoke;
     
 }
@@ -173,7 +173,7 @@ h1.imp{
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    padding-top: 50px;
+    padding-top: 10px;
     justify-content: center;
     gap: 30px;
     background-color: whitesmoke;
