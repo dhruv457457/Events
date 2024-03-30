@@ -13,10 +13,16 @@ body {
     background-color: whitesmoke;
 }
 
-.logo img {
-    width: 60px;
-    height: 73px;
-    background-color: aliceblue;
+
+ 
+.logo h1{
+    font-style: normal;
+    text-decoration: none;
+    color: #525151;
+    font-weight: bolder;
+  font-size: xx-large;
+  margin-top: -3px;
+    
 }
 
 nav {
@@ -70,7 +76,6 @@ main {
     
 
 }
-
 .carousel-container {
     overflow: hidden;
     width: 100%;
@@ -87,24 +92,25 @@ main {
     height: 500px; /* Ensure images cover the entire container */
     object-fit: cover; /* Cover the entire container */
   }
-  /* s */
-  section {
+  
+
+section {
     width: 100%;
-    height: 370px;
+    height: 750px;
     background-color: whitesmoke;
 }
 
 h1.ser {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
-  /* cards from here  */
+/* cards from here  */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    padding-top: 10px;
+    padding-top: 50px;
     justify-content: center;
     gap: 30px;
     background-color: whitesmoke;
@@ -158,57 +164,156 @@ h1.ser {
     background-color: #8c00ff;
 }
 
-/* imp links from here  */
-.imp{
-    width: 100%;
-    height: 340px;
-    background-color: whitesmoke;
-    
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+ background: rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-h1.imp{
+
+h1 {
     text-align: center;
-    
+    color: #333;
 }
-.card-container1 {
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #952aff;  /*  #ccc */
+    padding-bottom: 20px;
+}
+
+.question {
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    color: #666;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.answer.show {
+    display: block;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+/* table starts from here  */
+.table {
+    background-color: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .pricing {
     display: flex;
     flex-wrap: wrap;
-    height: 300px;
-    padding-top: 10px;
     justify-content: center;
-    gap: 30px;
-    background-color: whitesmoke;
+  
+    .plan {
+      background-color: #fff;
+      padding: 2.5rem;
+      margin: 12px;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+  
+      h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+  
+      .price {
+        margin-bottom: 1rem;
+        font-size: 30px;
+      }
+  
+      ul.features {
+        list-style-type: none;
+        text-align: left;
+        li {
+          margin: 8px;
+          .fas {
+            margin-right: 4px;
+          }
+          .fa-check-circle {
+            color: #952aff;
+          }
+          .fa-times-circle {
+            color: #952aff;
+          }
+        }
+      }
+  
+      button {
+        border: none;
+        width: 100%;
+        padding: 12px 35px;
+        margin-top: 1rem;
+        background-color: #952aff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      &.popular {
+        border: 2px solid #952aff;
+        position: relative;
+        transform: scale(1.08);
+  
+        span {
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #952aff;
+          color: #fff;
+          padding: 4px 20px;
+          font-size: 18px;
+          border-radius: 5px;
+        }
+      }
+  
+      &:hover {
+        box-shadow: 5px 7px 67px -28px rgba(0, 0, 0, 0.37);
+      }
+    }
+  }
 
-
-}
-
-
-.card1 {
-    width: 150px;
-    height: 125px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-
-.card1:hover {
-    transform: scale(1.05);
-}
-
-.card1 img {
-    width: 100%;
-    height: 125px;
-    object-fit: contain;
-}
-
-
-.card1 a {
-    text-decoration: none;
-}
-
-  /* footer starts from here  */
+/* footer starts from here  */
 
 .footer {
     background-color: #f8f9fa;

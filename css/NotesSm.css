@@ -180,7 +180,7 @@ main {
 :root {
     --offset: 3rem;
   }
-
+  html {
 
   *,
   *:before,
@@ -199,11 +199,11 @@ main {
     top: 0;
     font-size: 1.5rem;
     height: 3rem;
-    background: #ffc402;
+    background: #f7c317;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     border-bottom: 1px solid #000;
   }
