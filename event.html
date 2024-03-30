@@ -1,217 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/event.css">
-</head>
-<body>
-    <nav>
-        <div class="logo"></div>
-        <div class="right">
-            <ul>
-                <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
-                fill="none">
-                <path
-                d="M15.0001 17C14.2006 17.6224 13.1504 18 12.0001 18C10.8499 18 9.79965 17.6224 9.00012 17"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path
-                    d="M2.35151 13.2135C1.99849 10.9162 1.82198 9.76763 2.25629 8.74938C2.69059 7.73112 3.65415 7.03443 5.58126 5.64106L7.02111 4.6C9.41841 2.86667 10.6171 2 12.0001 2C13.3832 2 14.5818 2.86667 16.9791 4.6L18.419 5.64106C20.3461 7.03443 21.3097 7.73112 21.744 8.74938C22.1783 9.76763 22.0018 10.9162 21.6487 13.2135L21.3477 15.1724C20.8473 18.4289 20.597 20.0572 19.4291 21.0286C18.2612 22 16.5538 22 13.1389 22H10.8613C7.44646 22 5.73903 22 4.57112 21.0286C3.40321 20.0572 3.15299 18.4289 2.65255 15.1724L2.35151 13.2135Z"
-                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                </svg> <a href="index.html">Home</a> </li>
-                <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                  color="#000000" fill="none">
-                  <path
-                      d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
-                      stroke="currentColor" stroke-width="1.5" />
-                  <path
-                      d="M12.2422 17V12C12.2422 11.5286 12.2422 11.2929 12.0957 11.1464C11.9493 11 11.7136 11 11.2422 11"
-                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  <path d="M11.992 8H12.001" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-              </svg> <a href="about.html">About</a></li>
-                
-                <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                  color="#000000" fill="none">
-                  <path d="M9 14.5H13M9 9.5H17" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" />
-                  <path
-                      d="M4 10C4 6.22876 4 4.34315 5.17157 3.17157C6.34315 2 8.22876 2 12 2H13.5C17.2712 2 19.1569 2 20.3284 3.17157C21.5 4.34315 21.5 6.22876 21.5 10V14C21.5 17.7712 21.5 19.6569 20.3284 20.8284C19.1569 22 17.2712 22 13.5 22H12C8.22876 22 6.34315 22 5.17157 20.8284C4 19.6569 4 17.7712 4 14V10Z"
-                      stroke="currentColor" stroke-width="1.5" />
-                  <path d="M5 6L2.5 6M5 12L2.5 12M5 18H2.5" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" />
-              </svg> <a href="study.html">Study Material</a></li>
-                <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
-                    fill="none">
-                    <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                    <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                    <path
-                    d="M14.7728 10.2571C15.5061 10.9837 14.3328 16.8933 13.1289 16.9974C12.1189 17.0848 11.8041 15.0928 11.5914 14.4614C11.3815 13.8383 11.1478 13.6139 10.5298 13.4095C8.95989 12.8901 8.17492 12.6304 8.0195 12.2192C7.60796 11.1304 13.8362 9.32902 14.7728 10.2571Z"
-                    stroke="currentColor" stroke-width="1.5" />
-                </svg> <a t href="roadmap.html">Roadmaps</a></li>
-                <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
-                    fill="none">
-                    <path d="M18 2V4M6 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                    <path d="M11.9955 13H12.0045M11.9955 17H12.0045M15.991 13H16M8 13H8.00897M8 17H8.00897"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3.5 8H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                    <path
-                    d="M2.5 12.2432C2.5 7.88594 2.5 5.70728 3.75212 4.35364C5.00424 3 7.01949 3 11.05 3H12.95C16.9805 3 18.9958 3 20.2479 4.35364C21.5 5.70728 21.5 7.88594 21.5 12.2432V12.7568C21.5 17.1141 21.5 19.2927 20.2479 20.6464C18.9958 22 16.9805 22 12.95 22H11.05C7.01949 22 5.00424 22 3.75212 20.6464C2.5 19.2927 2.5 17.1141 2.5 12.7568V12.2432Z"
-                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3 8H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg> <a href="event.html">Events </a></li>
-            </ul>
-            </div>
-        </nav>
-<!-- main starts from here  -->
-<main>
-  <div class="up"></div>
-  <img src="material/event.png" alt="" class="responsive-image">
-  <div class="down"></div>
-</main>
-          
-        <div class="events">
-            <!-- Event Box 1 -->
-            <div class="event-box">
-              <div class="event-date"><img src="material/FULL-STACK.png" alt="">
-               </div>
-              <div class="event-details">
-                <div class="event-title">Web development Workshop   [  <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                    <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> - 31 march , 2024 ]</div>
-                <div class="event-description">Venue - Chennai, Tamil Nadu , Fee - INR 999/- PER PERSON (INDIA) </div>
-              </div>
-              <div class="event-registration">
-                <a href="#" class="register-btn">Register</a>
-              </div>
-            </div>
-            
-            <!-- Event Box 2 -->
-            <div class="event-box">
-                <div class="event-date"><img src="material/FULL-STACK.png" alt="">
-                </div>
-              <div class="event-details">
-                <div class="event-title">HACKIT 3.0 2024   [  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                    <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> - 31 march , 2024 ] </div>
-                <div class="event-description">Venue - Sriperumbudur, Tamil Nadu , Fee -  Rs150/member</div>
-              </div>
-              <div class="event-registration">
-                <a href="#" class="register-btn">Register</a>
-              </div>
-            </div>
-            
-            <div class="event-box">
-                <div class="event-date"><img src="material/FULL-STACK.png" alt="">
-                </div>
-                <div class="event-details">
-                  <div class="event-title">SAKURA 2K24 [  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                    <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> - 31 march , 2024 ]</div>
-                  <div class="event-description">Venue - Coimbatore, Tamil Nadu , Fee - Rs. 250</div>
-                </div>
-                <div class="event-registration">
-                  <a href="#" class="register-btn">Register</a>
-                </div>
-              </div>
-            
-              <div class="event-box">
-                <div class="event-date">April 12, 2024</div>
-                <div class="event-details">
-                  <div class="event-title">Coding Workshop</div>
-                  <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
-                </div>
-                <div class="event-registration">
-                  <a href="#" class="register-btn">Register</a>
-                </div>
-              </div>
-            
-              <div class="event-box">
-                <div class="event-date">April 12, 2024</div>
-                <div class="event-details">
-                  <div class="event-title">Coding Workshop</div>
-                  <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
-                </div>
-                <div class="event-registration">
-                  <a href="#" class="register-btn">Register</a>
-                </div>
-              </div>
-            
-              <div class="event-box">
-                <div class="event-date">April 12, 2024</div>
-                <div class="event-details">
-                  <div class="event-title">Coding Workshop</div>
-                  <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
-                </div>
-                <div class="event-registration">
-                  <a href="#" class="register-btn">Register</a>
-                </div>
-              </div>
-              
-            
-            
-            
-            </div>
-            
-            <!-- Add more event boxes as needed -->
-            
-            
-            
 
-         
-        <!-- footer -->
-        <footer class="footer">
-          <div class="footer-container">
-              <div class="footer-section">
-                  <h3>About Us</h3>
-                  <p>We are passionate about using technology to transform education here at [Your Edutech Company Name].
-                      In order to create a better future for everyone, our goal is to empower educators and students
-                      globally through cutting-edge learning solutions.</p>
-              </div>
-              <div class="footer-section">
-                  <h3>Quick Links</h3>
-                  <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Events</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Contact</a></li>
-                  </ul>
-              </div>
-              <div class="footer-section">
-                  <h3>Contact Us</h3>
-                  <p>123 Education Street</p>
-                  <p>City, State, Zip</p>
-                  <p>Email: info@example.com</p>
-                  <p>Phone: +1 234 567 890</p>
-              </div>
-          </div>
-          <div class="footer-bottom">
-              <p>&copy; 2024 Your Education Website. All rights reserved.</p>
-          </div>
-      </footer>
-      <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
-  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <link rel="stylesheet" href="css/event.css">
+</head>
+
+<body>
+  <nav>
+    <div class="logo"></div>
+    <div class="right">
+      <ul>
+        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <path d="M15.0001 17C14.2006 17.6224 13.1504 18 12.0001 18C10.8499 18 9.79965 17.6224 9.00012 17"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path
+              d="M2.35151 13.2135C1.99849 10.9162 1.82198 9.76763 2.25629 8.74938C2.69059 7.73112 3.65415 7.03443 5.58126 5.64106L7.02111 4.6C9.41841 2.86667 10.6171 2 12.0001 2C13.3832 2 14.5818 2.86667 16.9791 4.6L18.419 5.64106C20.3461 7.03443 21.3097 7.73112 21.744 8.74938C22.1783 9.76763 22.0018 10.9162 21.6487 13.2135L21.3477 15.1724C20.8473 18.4289 20.597 20.0572 19.4291 21.0286C18.2612 22 16.5538 22 13.1389 22H10.8613C7.44646 22 5.73903 22 4.57112 21.0286C3.40321 20.0572 3.15299 18.4289 2.65255 15.1724L2.35151 13.2135Z"
+              stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          </svg> <a href="index.html">Home</a> </li>
+        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <path
+              d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+              stroke="currentColor" stroke-width="1.5" />
+            <path d="M12.2422 17V12C12.2422 11.5286 12.2422 11.2929 12.0957 11.1464C11.9493 11 11.7136 11 11.2422 11"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.992 8H12.001" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> <a href="about.html">About</a></li>
+
+        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <path d="M9 14.5H13M9 9.5H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path
+              d="M4 10C4 6.22876 4 4.34315 5.17157 3.17157C6.34315 2 8.22876 2 12 2H13.5C17.2712 2 19.1569 2 20.3284 3.17157C21.5 4.34315 21.5 6.22876 21.5 10V14C21.5 17.7712 21.5 19.6569 20.3284 20.8284C19.1569 22 17.2712 22 13.5 22H12C8.22876 22 6.34315 22 5.17157 20.8284C4 19.6569 4 17.7712 4 14V10Z"
+              stroke="currentColor" stroke-width="1.5" />
+            <path d="M5 6L2.5 6M5 12L2.5 12M5 18H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> <a href="study.html">Study Material</a></li>
+        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M14.7728 10.2571C15.5061 10.9837 14.3328 16.8933 13.1289 16.9974C12.1189 17.0848 11.8041 15.0928 11.5914 14.4614C11.3815 13.8383 11.1478 13.6139 10.5298 13.4095C8.95989 12.8901 8.17492 12.6304 8.0195 12.2192C7.60796 11.1304 13.8362 9.32902 14.7728 10.2571Z"
+              stroke="currentColor" stroke-width="1.5" />
+          </svg> <a t href="roadmap.html">Roadmaps</a></li>
+        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000"
+            fill="none">
+            <path d="M18 2V4M6 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M11.9955 13H12.0045M11.9955 17H12.0045M15.991 13H16M8 13H8.00897M8 17H8.00897"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M3.5 8H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M2.5 12.2432C2.5 7.88594 2.5 5.70728 3.75212 4.35364C5.00424 3 7.01949 3 11.05 3H12.95C16.9805 3 18.9958 3 20.2479 4.35364C21.5 5.70728 21.5 7.88594 21.5 12.2432V12.7568C21.5 17.1141 21.5 19.2927 20.2479 20.6464C18.9958 22 16.9805 22 12.95 22H11.05C7.01949 22 5.00424 22 3.75212 20.6464C2.5 19.2927 2.5 17.1141 2.5 12.7568V12.2432Z"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M3 8H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg> <a href="event.html">Events </a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- main starts from here  -->
+  <main>
+    <div class="up"></div>
+    <img src="material/event.png" alt="" class="responsive-image">
+    <div class="down"></div>
+  </main>
+
+  <div class="events">
+    <!-- Event Box 1 -->
+    <div class="event-box">
+      <div class="event-date"><img
+          src="data:image/png;base64,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"
+          alt="">
+      </div>
+      <div class="event-details">
+        <div class="event-title">Web development Workshop [ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="24" height="24" color="#000000" fill="none">
+            <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> - 31 march , 2024 ]</div>
+        <div class="event-description">Venue - Chennai, Tamil Nadu , Fee - INR 999/- PER PERSON (INDIA) </div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+    <!-- Event Box 2 -->
+    <div class="event-box">
+      <div class="event-date"><img src="data:image/jpeg;base64,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" alt="">
+      </div>
+      <div class="event-details">
+        <div class="event-title">HACKIT 3.0 2024 [ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="24" height="24" color="#000000" fill="none">
+            <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> - 31 march , 2024 ] </div>
+        <div class="event-description">Venue - Sriperumbudur, Tamil Nadu , Fee - Rs150/member</div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date"><img src="data:image/jpeg;base64,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" alt="">
+      </div>
+      <div class="event-details">
+        <div class="event-title">SAKURA 2K24 [ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24" color="#000000" fill="none">
+            <path d="M18 5.5L19 4.5M5 4.5L6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="12" cy="13" r="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 9.5V13.5L14 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M12 3.5V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M10 2H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> - 31 march , 2024 ]</div>
+        <div class="event-description">Venue - Coimbatore, Tamil Nadu , Fee - Rs. 250</div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date">April 12, 2024</div>
+      <div class="event-details">
+        <div class="event-title">Coding Workshop</div>
+        <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date">April 12, 2024</div>
+      <div class="event-details">
+        <div class="event-title">Coding Workshop</div>
+        <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date">April 12, 2024</div>
+      <div class="event-details">
+        <div class="event-title">Coding Workshop</div>
+        <div class="event-description">Learn coding skills from industry experts in this hands-on workshop.</div>
+      </div>
+      <div class="event-registration">
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <!-- Add more event boxes as needed -->
+
+
+
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are passionate about using technology to transform education here at [Your Edutech Company Name].
+          In order to create a better future for everyone, our goal is to empower educators and students
+          globally through cutting-edge learning solutions.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Education Street</p>
+        <p>City, State, Zip</p>
+        <p>Email: info@example.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Your Education Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+ <!-- Include Google APIs Client Library -->
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+  // Initialize Google APIs Client Library
+  function initClient() {
+    gapi.client.init({
+      apiKey: 'YOUR_API_KEY', // Replace with your API key
+      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+    }).then(function () {
+      // Make API request to get events
+      gapi.client.calendar.events.list({
+        'calendarId': 'primary', // Use 'primary' for your primary calendar
+        'timeMin': (new Date()).toISOString(),
+        'showDeleted': false,
+        'singleEvents': true,
+        'orderBy': 'startTime'
+      }).then(function(response) {
+        var events = response.result.items;
+        if (events.length > 0) {
+          // Process and display events on your website
+          events.forEach(function(event) {
+            console.log(event.summary);
+            // Add your code to display event information on your website
+          });
+        } else {
+          console.log('No upcoming events found.');
+        }
+      });
+    });
+  }
+  // Load Google APIs Client Library
+  gapi.load('client', initClient);
+</script>
+
+
+
 </body>
+
 </html>
