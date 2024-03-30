@@ -15,6 +15,7 @@ body{
     padding: 2em 1em;
     text-align: center;
     background-color: whitesmoke;
+
 }
 section{
     background-color: whitesmoke;
@@ -24,6 +25,7 @@ section{
     padding: 0.5em 0;
 }
 
+
 h1{
     width: 100%;
     text-align: center;
@@ -32,19 +34,19 @@ h1{
 }
 
 .card{
-    box-shadow: 0 0 0.2em rgba(25, 0, 58, 0.15);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     padding: 3.5em 1em;
     border-radius: 0.6em;
     color: #1f003b;
     cursor: pointer;
     transition: 0.3s;
     background-color: #ffffff;
-    height: 40em;
+    height: 25em;
 }
 
 .card .img-conatiner {
-    width: 8em;
-    height: 8em;
+    width: 6em;
+    height: 6em;
     background-color: #a993ff;
     padding: 0.5em;
     border-radius: 50%;
@@ -52,7 +54,7 @@ h1{
 }
 
 .card img {
-    width: 100%;
+    width: 45%;
     border-radius: 50%;
 }
 
@@ -69,7 +71,7 @@ h1{
 
 .icons {
     width: 50%;
-    min-height: 180px;
+    min-height: 50px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -99,10 +101,11 @@ h1{
         padding: 5em 1em;
     }
     .column {
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
+        flex: 0 0 25%; /* Adjusted width to 25% */
+        max-width: 25%; /* Adjusted max-width to 25% */
         padding: 0 1em;
     }
+    
 
 }
 
@@ -267,23 +270,6 @@ main {
     color: rgba(0, 0, 0, 0.87)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* footer starts  */
 
 .footer {
@@ -336,4 +322,22 @@ main {
     border-top: 1px solid #ddd;
     color: #666;
     font-size: 14px;
+}
+
+.intro {
+    padding: 50px 0;
+    background-color: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    display: flex;
+   margin-left: 8.7em;
+   text-align: center;
+}
+
+.intro p{
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-right: 3em;
 }
