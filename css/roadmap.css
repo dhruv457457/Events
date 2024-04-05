@@ -98,6 +98,18 @@ main {
     color: rgba(0, 0, 0, 0.87)
 }
 
+
+@media only screen and (max-width: 767px) {
+    main{
+        height: 300px;
+    }
+    #main-h1{
+        text-align: center;
+        justify-content: center;
+        font-size: 65px;
+    }
+}
+
 /* cards starts  */
 .ag-format-container {
     width: 1142px;
@@ -258,9 +270,7 @@ body {
 }
 
 .roadmap img {
-
-
-    width: 200px;
+ width: 200px;
     height: 300px;
     object-fit: cover;
 }
