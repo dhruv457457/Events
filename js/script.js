@@ -1,3 +1,14 @@
+// for loading 
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader-container');
+    const content = document.getElementById('content');
+  
+    // Hide loader when the page is fully loaded
+    loader.style.display = 'none';
+    content.style.display = 'block';
+  });
+
+
 // for carousel
 let slideIndex = 0;
 

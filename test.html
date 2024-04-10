@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search bar </title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.search-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-input {
+  padding: 10px;
+  width: calc(100% - 50px);
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#suggestions {
+  margin-top: 10px;
+}
+
+.suggestion {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+#search-results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search...">
+  <div id="suggestions"></div>
+</div>
+<div id="search-results"></div>
+
+<script>
+    const studyMaterials = [
+  { title: "Engineering mathematics 1", url: "NotesSM.html#math" },
+  { title: "Engineering mathematics 2", url: "study.html" },
+  { title: "Engineering physics", url: "NotesSM.html#Phy" },
+  { title: "Basic Electrical Engineering", url: "chemistry.html" },
+  { title: "Basic Civil Engineering", url: "chemistry.html" },
+  { title: "Basic Mechanical Engineering", url: "chemistry.html" },
+  { title: "Programming for Problem Solving", url: "chemistry.html" },
+  { title: "Human Values", url: "chemistry.html" },
+  { title: "Communication Skils", url: "chemistry.html" },
+  { title: "Computer-aided design", url: "chemistry.html" },
+  { title: "Computer-aided Manufacturing", url: "chemistry.html" },
+  { title: "Events", url: " event.html"},
+  { title: "Study Material", url: "study.html"},
+  { title: "Roadmaps", url: "roadmap.html"},
+  { title: "About", url: "about.html"},
+
+
+  // Add more materials as needed
+];
+
+const searchInput = document.getElementById("search-input");
+const suggestionsContainer = document.getElementById("suggestions");
+const searchResultsContainer = document.getElementById("search-results");
+
+searchInput.addEventListener("input", displaySuggestions);
+searchInput.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    search();
+  }
+});
+
+function displaySuggestions() {
+  const inputValue = searchInput.value.trim().toLowerCase();
+  suggestionsContainer.innerHTML = "";
+
+  if (inputValue.length < 2) {
+    return; // Clear the suggestions container and return if input length is less than 3 characters
+  }
+
+  const suggestions = studyMaterials.filter(material => material.title.toLowerCase().includes(inputValue));
+
+  suggestions.forEach(suggestion => {
+    const suggestionDiv = document.createElement("div");
+    suggestionDiv.textContent = suggestion.title;
+    suggestionDiv.classList.add("suggestion");
+    suggestionDiv.addEventListener("click", function() {
+      searchInput.value = suggestion.title;
+      search();
+    });
+    suggestionsContainer.appendChild(suggestionDiv);
+  });
+}
+
+
+function search() {
+  const inputValue = searchInput.value.toLowerCase();
+  const searchResults = studyMaterials.filter(material => material.title.toLowerCase().includes(inputValue));
+  displayResults(searchResults);
+}
+
+function displayResults(results) {
+  searchResultsContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    searchResultsContainer.innerHTML = "<p>No results found.</p>";
+    return;
+  }
+
+  results.forEach(result => {
+    const resultLink = document.createElement("a");
+    resultLink.href = result.url;
+    resultLink.textContent = result.title;
+    resultLink.classList.add("result-link");
+    searchResultsContainer.appendChild(resultLink);
+    searchResultsContainer.appendChild(document.createElement("br"));
+  });
+}
+
+</script>
+</body>
+</html>
