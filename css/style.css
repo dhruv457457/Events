@@ -28,8 +28,10 @@ body {
 }
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -37,8 +39,13 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -52,7 +59,45 @@ body {
 
 }
 
- /* navbar starts from here  */
+/* for bottom to top button  */
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 100px;
+  /* Place the button at the bottom of the page */
+  right: 36px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: transparent;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 5px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+  transition: all 0.2s ease-in-out;
+}
+
+#myBtn:hover {
+  background-color: whitesmoke;
+  /* Add a background on hover */
+  transform: scale(1.05);
+}
+
+
+/* navbar starts from here  */
 nav {
   display: flex;
   justify-content: space-around;
@@ -152,7 +197,6 @@ h1.ser {
 
 }
 
-
 .card {
   width: 300px;
   height: 250px;
@@ -213,11 +257,71 @@ h1 {
   color: #333;
 }
 
+/* features starts from here  */
+.features-container{
+  padding: 50px;
+}
+.features {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.features:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.features h3 {
+  font-weight: 600;
+}
+
+.features img {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1 {
+  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+
+.card-2 {
+  background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+
+.card-3 {
+  background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+
+@media(max-width: 990px) {
+  .features {
+    margin: 20px;
+  }
+}
+
+/* features ends here */
+
+
 /* imp links from here  */
-.imp{
+.imp {
   width: 100%;
   height: 340px;
-  background-color: whitesmoke;}
+  background-color: whitesmoke;
+}
 
 
 .card-container1 {
@@ -345,3 +449,5 @@ h1 {
   color: #666;
   font-size: 14px;
 }
+
+
