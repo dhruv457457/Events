@@ -1,52 +1,52 @@
 // for loading 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loader = document.querySelector('.loader-container');
     const content = document.getElementById('content');
-  
+
     // Hide loader when the page is fully loaded
     loader.style.display = 'none';
     content.style.display = 'block';
-  });
+});
 
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 300px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  window.scrollTo({top: 0, behavior: 'smooth'}); // For Chrome, Firefox, IE and Opera
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // For Chrome, Firefox, IE and Opera
 }
 
 
 // for carousel
 let slideIndex = 0;
 
-        function showSlides() {
-            const slides = document.querySelectorAll('.carousel-slide img');
-            slides.forEach(slide => {
-                slide.style.display = 'none';
-            });
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = 'block';
-            setTimeout(showSlides, 3000); // Change slide every 3 seconds
-        }
+function showSlides() {
+    const slides = document.querySelectorAll('.carousel-slide img');
+    slides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+}
 
-        showSlides();
+showSlides();
 
 
-        //chat bot
-        const chatbotToggler = document.querySelector(".chatbot-toggler");
+//chat bot
+const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
@@ -75,7 +75,7 @@ const generateResponse = (chatElement) => {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: userMessage}],
+            messages: [{ role: "user", content: userMessage }],
         })
     }
     // Send POST request to API, get response and set the reponse as paragraph text
@@ -88,14 +88,14 @@ const generateResponse = (chatElement) => {
 }
 const handleChat = () => {
     userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
-    if(!userMessage) return;
+    if (!userMessage) return;
     // Clear the input textarea and set its height to default
     chatInput.value = "";
     chatInput.style.height = `${inputInitHeight}px`;
     // Append the user's message to the chatbox
     chatbox.appendChild(createChatLi(userMessage, "outgoing"));
     chatbox.scrollTo(0, chatbox.scrollHeight);
-    
+
     setTimeout(() => {
         // Display "Thinking..." message while waiting for the response
         const incomingChatLi = createChatLi("Thinking...", "incoming");
@@ -112,7 +112,7 @@ chatInput.addEventListener("input", () => {
 chatInput.addEventListener("keydown", (e) => {
     // If Enter key is pressed without Shift key and the window 
     // width is greater than 800px, handle the chat
-    if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
         e.preventDefault();
         handleChat();
     }
@@ -120,5 +120,70 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-  //nav
+//nav
+
+
+
+// for online offline status
+
+const onlineStatusDiv = document.getElementById('state');
+const onlineDiv = document.getElementById('online');
+const offlineDiv = document.getElementById('offline');
+let isOnline = navigator.onLine;
+let wasOnline = isOnline;
+const displayDuration = 3000; // in milliseconds (3 seconds)
+
+function showOnlineMessage() {
+    onlineDiv.classList.remove('hide');
+    setTimeout(() => {
+        onlineDiv.classList.add('hide');
+    }, displayDuration);
+}
+
+function updateOnlineStatus(event) {
+    isOnline = navigator.onLine;
+
+    if (isOnline && !wasOnline) {
+        showOnlineMessage();
+    }
+
+    if (!isOnline) {
+        offlineDiv.classList.remove('hide');
+    } else {
+        offlineDiv.classList.add('hide');
+    }
+
+    wasOnline = isOnline;
+}
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+
+updateOnlineStatus(); // Initial check
+
+
+// for email js 
+// Initialize EmailJS with your public key
+emailjs.init("NK6QP-GbG6gGC05Oz"); // Replace YOUR_PUBLIC_KEY with your actual EmailJS public key
+
+// Handle form submission
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+  event.preventDefault();
   
+  // Prepare email parameters
+  var params = {
+    from_name: document.getElementById("name").value,
+    reply_to: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+  
+  // Send email using EmailJS
+  emailjs.send("service_vpxkrku", "template_50miuds", params)
+    .then(function(response) {
+      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("feedbackForm").reset();
+    }, function(error) {
+      alert("There was an error. Please try again later.");
+    });
+});
+

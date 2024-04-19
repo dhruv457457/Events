@@ -181,26 +181,16 @@
         <a href="#" class="register-btn">Register</a>
       </div>
     </div>
-
-
-
-
   </div>
 
   <!-- Add more event boxes as needed -->
-
-
-
-
 
   <!-- footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
         <h3>About Us</h3>
-        <p>We are passionate about using technology to transform education here at [Your Edutech Company Name].
-          In order to create a better future for everyone, our goal is to empower educators and students
-          globally through cutting-edge learning solutions.</p>
+        <p id="dynamic"></p>
       </div>
       <div class="footer-section">
         <h3>Quick Links</h3>
@@ -224,43 +214,7 @@
       <p>&copy; 2024 Your Education Website. All rights reserved.</p>
     </div>
   </footer>
-
- <!-- Include Google APIs Client Library -->
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
-  // Initialize Google APIs Client Library
-  function initClient() {
-    gapi.client.init({
-      apiKey: 'YOUR_API_KEY', // Replace with your API key
-      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-    }).then(function () {
-      // Make API request to get events
-      gapi.client.calendar.events.list({
-        'calendarId': 'primary', // Use 'primary' for your primary calendar
-        'timeMin': (new Date()).toISOString(),
-        'showDeleted': false,
-        'singleEvents': true,
-        'orderBy': 'startTime'
-      }).then(function(response) {
-        var events = response.result.items;
-        if (events.length > 0) {
-          // Process and display events on your website
-          events.forEach(function(event) {
-            console.log(event.summary);
-            // Add your code to display event information on your website
-          });
-        } else {
-          console.log('No upcoming events found.');
-        }
-      });
-    });
-  }
-  // Load Google APIs Client Library
-  gapi.load('client', initClient);
-</script>
-
-
-
-</body>
+<script src="js/text.js"></script>
+ </body>
 
 </html>
