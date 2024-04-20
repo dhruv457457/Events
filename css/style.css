@@ -95,58 +95,90 @@ body {
 }
 
 
-/* navbar starts from here  */
+/* Navbar styles */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(1px);
   height: 50px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
   padding: 0 20px;
-  position: absolute;
-  color: black;
-
 }
 
-#landing {
-  width: 100%;
-  height: 500px;
-}
-
-.right ul {
+nav ul {
   display: flex;
   list-style: none;
   gap: 30px;
   margin: 0;
 }
 
-.right ul li {
+nav ul li {
   display: flex;
   align-items: center;
 }
 
-.right ul li a {
+nav ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: color 0.3s;
 }
 
-.right ul li a:hover {
+nav ul li a:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* Search container styles */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 8px;
+  width: 200px; /* Adjust width as needed */
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+#suggestions {
+  position: absolute;
+  top: calc(100% + 5px); /* Position suggestions below the search bar */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.suggestion {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+#search-results {
+  margin-top: 20px;
+  text-align: center;
 }
 
 main {
   width: 100%;
   height: 500px;
-  background-color: #8a2be2;
-
-
 }
 
 .carousel-container {

@@ -187,3 +187,98 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     });
 });
 
+
+// JavaScript for dynamic navbar
+
+     // Function to handle logout
+     function logout() {
+        // Remove the logged-in status from localStorage
+        localStorage.removeItem("isLoggedIn");
+        // Update the navigation bar
+        updateNavbar(false);
+      }
+      
+      // Function to update the navbar based on the login status
+      function updateNavbar(isLoggedIn) {
+        const loginSignupLink = document.getElementById("loginSignup");
+        const logoutLink = document.getElementById("logout");
+      
+        if (isLoggedIn) {
+          loginSignupLink.style.display = "none"; // Hide the login/signup link
+          logoutLink.style.display = "block"; // Show the logout link
+        } else {
+          loginSignupLink.style.display = "block"; // Show the login/signup link
+          logoutLink.style.display = "none"; // Hide the logout link
+        }
+      }
+      
+      // Check if the user is logged in when the page loads
+      window.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        if (isLoggedIn) {
+          updateNavbar(true);
+        } else {
+          updateNavbar(false);
+        }
+      });
+      
+      
+      const signUpButton = document.getElementById("signUp");
+      const signInButton = document.getElementById("login");
+      const container = document.getElementById("container");
+      const registrationForm = document.getElementById("registrationForm");
+      const loginForm = document.getElementById("loginForm");
+      
+      signUpButton.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+      });
+      
+      signInButton.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+      });
+      
+      registrationForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+      
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+      
+        const user = {
+          username: username,
+          email: email,
+          password: password,
+        };
+      
+        localStorage.setItem("user", JSON.stringify(user));
+      
+        // Show a confirmation message after successful registration
+        alert("Registration successful! You can now sign in.");
+      
+        // Reset the form after submission
+        registrationForm.reset();
+      });
+      
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+      
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+      
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+      
+        if (
+          storedUser &&
+          email === storedUser.email &&
+          password === storedUser.password
+        ) {
+          // Set the logged-in status in localStorage
+          localStorage.setItem("isLoggedIn", true);
+          // Redirect to the index page after successful login
+          window.location.href = "index.html";
+          // Show a popup message
+          alert("Login successful!");
+        } else {
+          alert("Invalid email or password. Please try again.");
+        }
+      });
