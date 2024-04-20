@@ -1,0 +1,217 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px; /* Sidebar width */
+  background-color: #952aff; /* Dark background color */
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling */
+  z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+.sidebar {
+  height: 100%; /* Full height */
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #bbb; /* Lighten text color on hover */
+}
+
+.container {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between; /* Change to "space-evenly" for equal spacing */
+  margin-bottom: 20px;
+}
+
+.options button {
+  padding: 10px 20px;
+  background-color: #952aff; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.options button:hover {
+  background-color: #7e00c4; /* Darken primary color on hover */
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-form textarea,
+.post-form input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.post-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #952aff; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.post-form button:hover {
+  background-color: #7e00c4; /* Darken primary color on hover */
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.post-item img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.post-item p {
+  margin-bottom: 10px;
+}
+
+.post-item .user-info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #777;
+  font-size: 12px;
+}
+
+.post-item .actions {
+  margin-top: 20px;
+}
+
+.post-item .actions button {
+  width: 50%;
+  padding: 8px;
+  background-color: #952aff; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.post-item .actions button:hover {
+  background-color: #7e00c4; /* Darken primary color on hover */
+}
+
+.post-item .likes {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+.liked {
+  color: #ff3300;
+}
+
+.post-item .comment {
+  margin-top: 20px;
+}
+
+.post-item .comment input[type="text"],
+.post-item .comment textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.post-item .comment button {
+  width: 100%;
+  padding: 10px;
+  background-color: #952aff; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.post-item .comment button:hover {
+  background-color: #7e00c4; /* Darken primary color on hover */
+}
+
+.post-item .comment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
