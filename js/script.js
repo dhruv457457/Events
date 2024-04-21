@@ -124,69 +124,6 @@ chatbotToggler.addEventListener("click", () => document.body.classList.toggle("s
 
 
 
-// for online offline status
-
-const onlineStatusDiv = document.getElementById('state');
-const onlineDiv = document.getElementById('online');
-const offlineDiv = document.getElementById('offline');
-let isOnline = navigator.onLine;
-let wasOnline = isOnline;
-const displayDuration = 3000; // in milliseconds (3 seconds)
-
-function showOnlineMessage() {
-    onlineDiv.classList.remove('hide');
-    setTimeout(() => {
-        onlineDiv.classList.add('hide');
-    }, displayDuration);
-}
-
-function updateOnlineStatus(event) {
-    isOnline = navigator.onLine;
-
-    if (isOnline && !wasOnline) {
-        showOnlineMessage();
-    }
-
-    if (!isOnline) {
-        offlineDiv.classList.remove('hide');
-    } else {
-        offlineDiv.classList.add('hide');
-    }
-
-    wasOnline = isOnline;
-}
-
-window.addEventListener('online', updateOnlineStatus);
-window.addEventListener('offline', updateOnlineStatus);
-
-updateOnlineStatus(); // Initial check
-
-
-// for email js 
-// Initialize EmailJS with your public key
-emailjs.init("NK6QP-GbG6gGC05Oz"); // Replace YOUR_PUBLIC_KEY with your actual EmailJS public key
-
-// Handle form submission
-document.getElementById("feedbackForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  // Prepare email parameters
-  var params = {
-    from_name: document.getElementById("name").value,
-    reply_to: document.getElementById("email").value,
-    message: document.getElementById("message").value
-  };
-  
-  // Send email using EmailJS
-  emailjs.send("service_vpxkrku", "template_50miuds", params)
-    .then(function(response) {
-      document.getElementById("successMessage").style.display = "block";
-      document.getElementById("feedbackForm").reset();
-    }, function(error) {
-      alert("There was an error. Please try again later.");
-    });
-});
-
 
 // JavaScript for dynamic navbar
 

@@ -72,6 +72,11 @@
                 </a>
             </li>
             <li>
+                <a href="community.html">
+                    Community
+                </a>
+            </li>
+            <li>
                 <a id="loginSignup" href="login.html">
                     Login/Signup
                 </a>
@@ -131,6 +136,7 @@
                 <a href="event.html"><button class="view-button">Explore</button></a>
 
             </div>
+            
     </section>
 
     <!-- features starts from here  -->
@@ -337,6 +343,47 @@
                 },
                 rootEl: document.getElementById("alan-btn"),
             }); </script>
+
+            <script>
+                // for online offline status
+
+const onlineStatusDiv = document.getElementById('state');
+const onlineDiv = document.getElementById('online');
+const offlineDiv = document.getElementById('offline');
+let isOnline = navigator.onLine;
+let wasOnline = isOnline;
+const displayDuration = 3000; // in milliseconds (3 seconds)
+
+function showOnlineMessage() {
+    onlineDiv.classList.remove('hide');
+    setTimeout(() => {
+        onlineDiv.classList.add('hide');
+    }, displayDuration);
+}
+
+function updateOnlineStatus(event) {
+    isOnline = navigator.onLine;
+
+    if (isOnline && !wasOnline) {
+        showOnlineMessage();
+    }
+
+    if (!isOnline) {
+        offlineDiv.classList.remove('hide');
+    } else {
+        offlineDiv.classList.add('hide');
+    }
+
+    wasOnline = isOnline;
+}
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+
+updateOnlineStatus(); // Initial check
+
+
+            </script>
           
 </body>
 
