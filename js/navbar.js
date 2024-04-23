@@ -15,6 +15,8 @@ const studyMaterials = [
     { title: "Study Material", url: "study.html"},
     { title: "Roadmaps", url: "roadmap.html"},
     { title: "About", url: "about.html"},
+    { title: "Community", url: "community.html"},
+    { title: "AI tools", url: "AI tools.html"},
 ];
 
 const searchInput = document.getElementById("search-input");

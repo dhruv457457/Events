@@ -275,59 +275,37 @@ var email = "";
 // Function to update user profile
 function updateProfile(event) {
   event.preventDefault(); // Prevent form submission
-  
+
   // Get input values
   var usernameInput = document.querySelector('#usernameInput');
   var emailInput = document.querySelector('#emailInput');
-  
+
   // Update global variables with new values
   username = usernameInput.value;
   email = emailInput.value;
-  
+
+  // Save user information to local storage
+  localStorage.setItem("user", JSON.stringify({ username: username, email: email }));
+
   // Display updated profile information
-  var profileSection = document.querySelector('.profile-section');
-  profileSection.innerHTML = `
-    <h3>Manage Profile</h3>
-    <p>Username: ${username}</p>
-    <p>Email: ${email}</p>
-    <button onclick="updateProfile(event)">Update Profile</button>
-  `;
+  updateUserInfo(); // Update user information in the community panel
 }
 
-// Function to submit a new post
-function submitPost() {
-  var postInput = document.getElementById("postInput");
-  var imageUrlInput = document.getElementById("imageUrl");
-  var postText = postInput.value.trim();
-  var imageUrl = imageUrlInput.value.trim();
+// Function to update user information in the community panel
+function updateUserInfo() {
+  // Retrieve user information from local storage
+  const storedUser = JSON.parse(localStorage.getItem("user"));
 
-  if (postText !== "" || imageUrl !== "") {
-    // Create new post item
-    var listItem = document.createElement("li");
-    listItem.className = "post-item";
+  // Check if user information exists
+  if (storedUser) {
+    // Update HTML elements with user information
+    const usernameElement = document.getElementById("usernameDisplay");
+    const emailElement = document.getElementById("emailDisplay");
 
-    // Create post content
-    var content = "";
-    if (imageUrl !== "") {
-      content += `<img src="${imageUrl}" alt="Post Image">`;
+    if (usernameElement && emailElement) {
+      usernameElement.textContent = storedUser.username;
+      emailElement.textContent = storedUser.email;
     }
-    content += `<p>${postText}</p>`;
-    listItem.innerHTML = content;
-
-    // Add user information to the post
-    var userInfo = document.createElement("div");
-    userInfo.className = "user-info";
-    userInfo.textContent = `Posted by: ${username} (${email})`;
-    listItem.appendChild(userInfo);
-
-    // Add post item to the post list
-    var postList = document.getElementById("postList");
-    postList.appendChild(listItem);
-
-    // Reset input fields
-    postInput.value = "";
-    imageUrlInput.value = "";
-    document.getElementById('imagePreview').style.display = 'none';
   }
 }
 
@@ -351,107 +329,20 @@ function submitPost() {
     content += `<p>${postText}</p>`;
     listItem.innerHTML = content;
 
-    // Add user information to the post
-    var userInfo = document.createElement("div");
-    userInfo.className = "user-info";
-    userInfo.textContent = `Posted by: ${username} (${email})`;
-    listItem.appendChild(userInfo);
-
-    // Add actions to the post
-    var actions = document.createElement("div");
-    actions.className = "actions";
-    var likeButton = document.createElement("button");
-    likeButton.textContent = "Like";
-    likeButton.onclick = function() {
-      likePost(likeButton);
-    };
-    actions.appendChild(likeButton);
-    var commentButton = document.createElement("button");
-    commentButton.textContent = "Comment";
-    commentButton.onclick = function() {
-      toggleComments(listItem);
-    };
-    actions.appendChild(commentButton);
-    listItem.appendChild(actions);
-
-    // Add likes section
-    var likes = document.createElement("div");
-    likes.className = "likes";
-    likes.textContent = "0 likes";
-    listItem.appendChild(likes);
-
-    // Add comment section
-    var commentForm = document.createElement("div");
-    commentForm.className = "comment";
-    commentForm.innerHTML = `
-      <input type="text" placeholder="Write a comment...">
-      <textarea placeholder="Write a comment..."></textarea>
-      <button onclick="submitComment(this)">Comment</button>
-      <ul class="comment-list"></ul>
-    `;
-    listItem.appendChild(commentForm);
-
-    // Add post item to the post list
-    var postList = document.getElementById("postList");
-    postList.appendChild(listItem);
-
-    // Reset input fields
-    postInput.value = "";
-    imageUrlInput.value = "";
-    document.getElementById('imagePreview').style.display = 'none';
-  }
-}
-
-// Function to toggle comments on a post
-function toggleComments(postItem) {
-  var commentSection = postItem.querySelector(".comment");
-  commentSection.classList.toggle("show");
-}
-
-// Function to submit a new comment
-function submitComment(button) {
-  var commentInput = button.previousElementSibling.previousElementSibling;
-  var commentText = commentInput.value.trim();
-  if (commentText !== "") {
-    var listItem = document.createElement("li");
-    listItem.textContent = commentText;
-    button.parentNode.querySelector(".comment-list").appendChild(listItem);
-    commentInput.value = "";
-  }
-}
-
-
-// Function to submit a new post
-function submitPost() {
-  var postInput = document.getElementById("postInput");
-  var imageUrlInput = document.getElementById("imageUrl");
-  var postText = postInput.value.trim();
-  var imageUrl = imageUrlInput.value.trim();
-
-  if (postText !== "" || imageUrl !== "") {
-    // Create new post item
-    var listItem = document.createElement("li");
-    listItem.className = "post-item";
-
-    // Create post content
-    var content = "";
-    if (imageUrl !== "") {
-      content += `<img src="${imageUrl}" alt="Post Image">`;
+    // Retrieve user information from local storage
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    var userInfoText = "Posted by: ";
+    if (storedUser) {
+      userInfoText += `${storedUser.username} (${storedUser.email})`;
+    } else {
+      userInfoText += "Unknown User";
     }
-    content += `<p>${postText}</p>`;
-    listItem.innerHTML = content;
 
     // Add user information to the post
     var userInfo = document.createElement("div");
     userInfo.className = "user-info";
-    userInfo.textContent = `Posted by: ${username} (${email})`;
+    userInfo.textContent = userInfoText;
     listItem.appendChild(userInfo);
-
-    // Add timestamp to the post
-    var timestamp = document.createElement("div");
-    timestamp.className = "timestamp";
-    timestamp.textContent = getTimeSince(new Date());
-    listItem.appendChild(timestamp);
 
     // Add actions to the post
     var actions = document.createElement("div");
@@ -498,49 +389,70 @@ function submitPost() {
   }
 }
 
-// Function to get time since a given date
-function getTimeSince(date) {
-  var seconds = Math.floor((new Date() - date) / 1000);
+// Function to submit a new query
+function submitQuery() {
+  var queryInput = document.getElementById("queryInput");
+  var queryText = queryInput.value.trim();
 
-  var interval = Math.floor(seconds / 31536000);
+  if (queryText !== "") {
+    // Create new query item
+    var listItem = document.createElement("li");
+    listItem.className = "post-item";
 
-  if (interval > 1) {
-    return interval + " years ago";
-  }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return interval + " months ago";
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
-    return interval + " days ago";
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return interval + " hours ago";
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return interval + " minutes ago";
-  }
-  return Math.floor(seconds) + " seconds ago";
-}
+    // Create query content
+    var text = document.createElement("p");
+    text.textContent = queryText;
+    listItem.appendChild(text);
 
-// Function to update user information in the community section
-function updateUserInfo() {
-  // Retrieve user information from local storage
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-
-  // Check if user information exists
-  if (storedUser) {
-    // Update HTML elements with user information
-    const usernameElement = document.getElementById("usernameDisplay");
-    const emailElement = document.getElementById("emailDisplay");
-
-    if (usernameElement && emailElement) {
-      usernameElement.textContent = storedUser.username;
-      emailElement.textContent = storedUser.email;
+    // Retrieve user information from local storage
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    var userInfoText = "Posted by: ";
+    if (storedUser) {
+      userInfoText += `${storedUser.username} (${storedUser.email})`;
+    } else {
+      userInfoText += "Unknown User";
     }
+
+    // Add user information to the query
+    var userInfo = document.createElement("div");
+    userInfo.className = "user-info";
+    userInfo.textContent = userInfoText;
+    listItem.appendChild(userInfo);
+
+    // Add actions to the query
+    var actions = document.createElement("div");
+    actions.className = "actions";
+    var likeButton = document.createElement("button");
+    likeButton.textContent = "Like";
+    likeButton.onclick = function() {
+      likePost(likeButton);
+    };
+    actions.appendChild(likeButton);
+    listItem.appendChild(actions);
+
+    // Add likes section
+    var likes = document.createElement("div");
+    likes.className = "likes";
+    likes.textContent = "0 likes";
+    listItem.appendChild(likes);
+
+    // Add comment section
+    var commentForm = document.createElement("div");
+    commentForm.className = "comment";
+    commentForm.innerHTML = `
+      <input type="text" placeholder="Write a comment...">
+      <textarea placeholder="Write a comment..."></textarea>
+      <button onclick="submitComment(this)">Comment</button>
+      <ul class="comment-list"></ul>
+    `;
+    listItem.appendChild(commentForm);
+
+    // Add query item to the query list
+    var queryList = document.getElementById("queryList");
+    queryList.appendChild(listItem);
+
+    // Reset input field
+    queryInput.value = "";
   }
 }
 
