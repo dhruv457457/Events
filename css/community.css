@@ -6,31 +6,32 @@ body {
   background-color: #f4f4f4;
 }
 
-.sidebar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 220px; /* Sidebar width */
-  background-color: #952aff; /* Dark background color */
-  color: #fff;
-  padding: 20px;
-  overflow-y: auto; /* Enable scrolling */
-  z-index: 1000; /* Ensure sidebar is above other content */
+.container {
+  display: flex;
 }
 
 .sidebar {
-  height: 100%; /* Full height */
+  width: 220px; /* Sidebar width */
+  background-color: #4a4e69; /* Dark background color */
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar h3 {
   margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #f9f9f9; /* Light text color */
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
+  width: 100%;
 }
 
 .sidebar ul li {
@@ -38,19 +39,22 @@ body {
 }
 
 .sidebar ul li a {
-  color: #fff;
+  display: block;
+  padding: 10px;
+  color: #f9f9f9; /* Light text color */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .sidebar ul li a:hover {
-  color: #bbb; /* Lighten text color on hover */
+  background-color: #5c5f77; /* Darker background color on hover */
 }
 
-.container {
-  margin-left: 250px; /* Adjust based on sidebar width */
+.main-content {
+  flex: 1;
   padding: 20px;
 }
+
 
 h1 {
   margin-bottom: 20px;
@@ -83,13 +87,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.section-content {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
+/* Post Item Styles */
 .post-form textarea,
 .post-form input[type="text"] {
   width: calc(100% - 22px);
@@ -123,12 +121,16 @@ h1 {
 }
 
 .post-item {
-  background-color: #f9f9f9;
-  margin-bottom: 20px;
-  padding: 20px;
+  background-color: #fff; /* White background color for post items */
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin-bottom: 20px;
+  overflow: hidden; /* Hide overflowing content */
+  transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+.post-item:hover {
+  transform: translateY(-5px); /* Add a slight lift effect on hover */
 }
 
 .post-item img {
@@ -141,77 +143,72 @@ h1 {
   margin-bottom: 10px;
 }
 
-.post-item .user-info {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #777;
-  font-size: 12px;
+.user-info {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0; /* Light border color */
 }
 
-.post-item .actions {
-  margin-top: 20px;
+.user-info h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333; /* Dark text color for usernames */
 }
 
-.post-item .actions button {
-  width: 50%;
-  padding: 8px;
-  background-color: #952aff; /* Primary color */
-  color: #fff;
+.actions {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.actions button {
+  padding: 8px 16px;
+  background-color: transparent; /* Transparent background for buttons */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   font-size: 14px;
 }
 
-.post-item .actions button:hover {
-  background-color: #7e00c4; /* Darken primary color on hover */
+.actions button:hover {
+  background-color: #f0f0f0; /* Light background color on hover */
+  color: #333; /* Dark text color on hover */
 }
 
-.post-item .likes {
-  margin-top: 10px;
+.likes {
   font-size: 14px;
-  color: #777;
+  color: #777; /* Gray text color for likes */
 }
 
-.liked {
-  color: #ff3300;
-}
-
-.post-item .comment {
-  margin-top: 20px;
-}
-
-.post-item .comment input[type="text"],
-.post-item .comment textarea {
-  width: calc(100% - 22px);
-  padding: 10px;
-  margin-bottom: 10px;
+.comment-input {
+  flex: 1; /* Make the comment input field expand to fill available space */
+  padding: 8px 12px;
+  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: vertical;
   font-size: 14px;
+  transition: border-color 0.3s;
 }
 
-.post-item .comment button {
-  width: 100%;
-  padding: 10px;
+.comment-input:focus {
+  border-color: #7e00c4; /* Change border color on focus */
+  outline: none;
+}
+
+.comment-button {
+  padding: 8px 16px;
   background-color: #952aff; /* Primary color */
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.post-item .comment button:hover {
-  background-color: #7e00c4; /* Darken primary color on hover */
-}
-
-.post-item .comment-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
+.comment-button:hover {
+  background-color: #7e00c4; /* Darker primary color on hover */
 }
