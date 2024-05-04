@@ -171,7 +171,7 @@ main {
 
 /* responsive  */
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
     main{
         height: 300px;
     }
@@ -189,5 +189,5 @@ main {
 .card-container{
     height: 2000px;
 }
-
+ */
 
