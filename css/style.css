@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   background-color: whitesmoke;
 }
 /* for colours  */
@@ -213,7 +213,7 @@ main {
 
 section {
   width: 100%;
-  height: 370px;
+  height: 600px;
   background-color: var(--bgcolour);
 }
 
@@ -226,10 +226,10 @@ h1.ser {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 590px;
   padding-top: 10px;
   justify-content: center;
-  gap: 30px;
+  gap: 81px;
   background-color: var(--bgcolour);
 
 
@@ -295,63 +295,7 @@ h1 {
   color: #333;
 }
 
-/* features starts from here  */
-.features-container{
-  padding: 50px;
-}
-.features {
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 0 10px var(--shadow);
-  transition: transform 0.3s;
-  padding: 14px 80px 18px 36px;
-  cursor: pointer;
-}
 
-.features:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-}
-
-.features h3 {
-  font-weight: 600;
-}
-
-.features img {
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  max-height: 120px;
-}
-
-.card-1 {
-  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-.card-2 {
-  background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-.card-3 {
-  background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-@media(max-width: 990px) {
-  .features {
-    margin: 20px;
-  }
-}
-
-/* features ends here */
 
 
 /* imp links from here  */
@@ -365,11 +309,12 @@ h1 {
 .card-container1 {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 170px;
   padding-top: 10px;
   justify-content: center;
   gap: 30px;
   background-color: var(--bgcolour);
+
 }
 
 .card1 {
@@ -389,49 +334,6 @@ h1 {
 .card1:hover {
   transform: scale(1.05);
 }
-
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--colour);
-  /*  #ccc */
-  padding-bottom: 20px;
-}
-
-.question {
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-}
-
-.answer {
-  display: none;
-  margin-top: 10px;
-  color: #666;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  max-height: 0;
-  overflow: hidden;
-  box-shadow: 0px 10px 15px var(--shadow);
-  transition: transform 0.3s;
-  opacity: 0;
-}
-
-.answer.show {
-  display: block;
-  max-height: 1000px;
-  opacity: 1;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  .faq-item {
-    margin-bottom: 15px;
-  }
-}
-
 
 
 /* footer starts from here  */

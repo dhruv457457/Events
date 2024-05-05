@@ -1,3 +1,50 @@
+// Function to toggle the sidebar's visibility
+function toggleSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  var mainContent = document.querySelector('.main-content');
+  var toggleButton = document.getElementById('sidebarToggle');
+  var userElements = document.querySelectorAll('.user-profile');
+  var navLinks = document.querySelectorAll('.nav-links');
+  var navHeading = document.querySelectorAll('.nav-heading');
+
+  if (sidebar.classList.contains('collapsed')) {
+    sidebar.classList.remove('collapsed');
+    mainContent.style.marginLeft = '0px';
+    toggleButton.innerHTML = '&#9776;';
+
+    userElements.forEach(function(element) {
+      element.style.display = 'block';
+    });
+
+    navLinks.forEach(function(element) {
+      element.style.display = 'block';
+    });
+
+    navHeading.forEach(function(element) {
+      element.style.display = 'block';
+    });
+  } else {
+    sidebar.classList.add('collapsed');
+    mainContent.style.marginLeft = '0';
+    toggleButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M20 12H4m8-8l8 8-8 8"/></svg>';
+
+    userElements.forEach(function(element) {
+      element.style.display = 'none';
+    });
+
+    navLinks.forEach(function(element) {
+      element.style.display = 'block';
+    });
+
+    navHeading.forEach(function(element) {
+      element.style.display = 'none';
+    });
+  }
+}
+
+
+
+
 function handleFileSelect(event) {
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -51,12 +98,12 @@ function handleFileSelect(event) {
   
       var commentForm = document.createElement("div");
       commentForm.className = "comment";
-      commentForm.innerHTML = `
-        <input type="text" placeholder="Write a comment...">
-        <textarea placeholder="Write a comment..."></textarea>
-        <button onclick="submitComment(this)">Comment</button>
-        <ul class="comment-list"></ul>
-      `;
+      // commentForm.innerHTML = `
+      //   <input type="text" placeholder="Write a comment...">
+      //   <textarea placeholder="Write a comment..."></textarea>
+      //   <button onclick="submitComment(this)">Comment</button>
+      //   <ul class="comment-list"></ul>
+      // `;
       listItem.appendChild(commentForm);
   
       document.getElementById("postList").appendChild(listItem);
@@ -101,12 +148,12 @@ function handleFileSelect(event) {
   
       var commentForm = document.createElement("div");
       commentForm.className = "comment";
-      commentForm.innerHTML = `
-        <input type="text" placeholder="Write a comment...">
-        <textarea placeholder="Write a comment..."></textarea>
-        <button onclick="submitComment(this)">Comment</button>
-        <ul class="comment-list"></ul>
-      `;
+      // commentForm.innerHTML = `
+      //   <input type="text" placeholder="Write a comment...">
+      //   <textarea placeholder="Write a comment..."></textarea>
+      //   <button onclick="submitComment(this)">Comment</button>
+      //   <ul class="comment-list"></ul>
+      // `;
       listItem.appendChild(commentForm);
   
       document.getElementById("queryList").appendChild(listItem);
@@ -368,11 +415,10 @@ function submitPost() {
     listItem.appendChild(likes);
 
     // Add comment section
-    var commentForm = document.createElement("div");
-    commentForm.className = "comment";
+    var commentForm = document.createElement('div');
+    commentForm.className = 'comment';
     commentForm.innerHTML = `
       <input type="text" placeholder="Write a comment...">
-      <textarea placeholder="Write a comment..."></textarea>
       <button onclick="submitComment(this)">Comment</button>
       <ul class="comment-list"></ul>
     `;
@@ -437,15 +483,14 @@ function submitQuery() {
     listItem.appendChild(likes);
 
     // Add comment section
-    var commentForm = document.createElement("div");
-    commentForm.className = "comment";
-    commentForm.innerHTML = `
-      <input type="text" placeholder="Write a comment...">
-      <textarea placeholder="Write a comment..."></textarea>
-      <button onclick="submitComment(this)">Comment</button>
-      <ul class="comment-list"></ul>
-    `;
-    listItem.appendChild(commentForm);
+    var commentForm = document.createElement('div');
+      commentForm.className = 'comment';
+      commentForm.innerHTML = `
+        <input type="text" placeholder="Write a comment...">
+        <button onclick="submitComment(this)">Comment</button>
+        <ul class="comment-list"></ul>
+      `;
+      listItem.appendChild(commentForm);
 
     // Add query item to the query list
     var queryList = document.getElementById("queryList");

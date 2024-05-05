@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+
 /* Global Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -11,20 +13,25 @@ body {
 }
 
 .sidebar {
-  width: 220px; /* Sidebar width */
-  background-color: #4a4e69; /* Dark background color */
+  width: 220px;
+  /* Sidebar width */
+  background-color: #4a4e69;
+  /* Dark background color */
   color: #fff;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: width 0.3s ease;
+  /* Add transition for smooth width change */
 }
 
 .sidebar h3 {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 24px;
-  color: #f9f9f9; /* Light text color */
+  color: #f9f9f9;
+  /* Light text color */
 }
 
 .sidebar ul {
@@ -41,14 +48,80 @@ body {
 .sidebar ul li a {
   display: block;
   padding: 10px;
-  color: #f9f9f9; /* Light text color */
+  color: #f9f9f9;
+  /* Light text color */
+  border-radius: 10px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
 .sidebar ul li a:hover {
-  background-color: #5c5f77; /* Darker background color on hover */
+  background-color: #5c5f77;
+  /* Darker background color on hover */
 }
+
+.collapsed .sidebar {
+  width: 60px;
+  /* Adjusted width for collapsed state */
+}
+
+
+/*toggle button  */
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  /* Add transition for smooth rotation */
+}
+
+.collapsed .toggle-button {
+  transform: rotate(180deg);
+  /* Rotate toggle button for collapsed state */
+}
+
+.sidebar.collapsed {
+  width: 50px;
+  /* Adjust the width of the collapsed sidebar as needed */
+}
+
+.sidebar.collapsed .toggle-button {
+  right: 5px;
+  /* Adjust the position of the toggle button when the sidebar is collapsed */
+}
+
+.menu-text {
+  display: inline-block;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.sidebar.collapsed .menu-text,
+.sidebar.collapsed .nav-heading {
+  display: none;
+}
+
+.sidebar.collapsed .menu-icon {
+  display: inline-block;
+}
+
+.user-profile {
+  display: block;
+}
+
+.sidebar.collapsed .user-profile {
+  display: none;
+}
+
 
 .main-content {
   flex: 1;
@@ -64,13 +137,15 @@ h1 {
 
 .options {
   display: flex;
-  justify-content: space-between; /* Change to "space-evenly" for equal spacing */
+  justify-content: space-between;
+  /* Change to "space-evenly" for equal spacing */
   margin-bottom: 20px;
 }
 
 .options button {
   padding: 10px 20px;
-  background-color: #952aff; /* Primary color */
+  background-color: #952aff;
+  /* Primary color */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -80,7 +155,8 @@ h1 {
 }
 
 .options button:hover {
-  background-color: #7e00c4; /* Darken primary color on hover */
+  background-color: #7e00c4;
+  /* Darken primary color on hover */
 }
 
 .section {
@@ -102,17 +178,20 @@ h1 {
 .post-form button {
   width: 100%;
   padding: 10px;
-  background-color: #952aff; /* Primary color */
+  background-color: #952aff;
+  /* Primary color */
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 16px;
+  margin-top: 10px;
 }
 
 .post-form button:hover {
-  background-color: #7e00c4; /* Darken primary color on hover */
+  background-color: #7e00c4;
+  /* Darken primary color on hover */
 }
 
 .post-list {
@@ -121,16 +200,21 @@ h1 {
 }
 
 .post-item {
-  background-color: #fff; /* White background color for post items */
+  background-color: #fff;
+  /* White background color for post items */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow */
   margin-bottom: 20px;
-  overflow: hidden; /* Hide overflowing content */
-  transition: transform 0.3s ease; /* Add a smooth transition */
+  overflow: hidden;
+  /* Hide overflowing content */
+  transition: transform 0.3s ease;
+  /* Add a smooth transition */
 }
 
 .post-item:hover {
-  transform: translateY(-5px); /* Add a slight lift effect on hover */
+  transform: translateY(-5px);
+  /* Add a slight lift effect on hover */
 }
 
 .post-item img {
@@ -147,13 +231,15 @@ h1 {
   padding: 15px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f0f0f0; /* Light border color */
+  border-bottom: 1px solid #f0f0f0;
+  /* Light border color */
 }
 
 .user-info h4 {
   margin: 0;
   font-size: 16px;
-  color: #333; /* Dark text color for usernames */
+  color: #333;
+  /* Dark text color for usernames */
 }
 
 .actions {
@@ -165,7 +251,8 @@ h1 {
 
 .actions button {
   padding: 8px 16px;
-  background-color: transparent; /* Transparent background for buttons */
+  background-color: whitesmoke;
+  /* Transparent background for buttons */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -174,17 +261,21 @@ h1 {
 }
 
 .actions button:hover {
-  background-color: #f0f0f0; /* Light background color on hover */
-  color: #333; /* Dark text color on hover */
+  background-color: #f0f0f0;
+  /* Light background color on hover */
+  color: #333;
+  /* Dark text color on hover */
 }
 
 .likes {
   font-size: 14px;
-  color: #777; /* Gray text color for likes */
+  color: #777;
+  /* Gray text color for likes */
 }
 
 .comment-input {
-  flex: 1; /* Make the comment input field expand to fill available space */
+  flex: 1;
+  /* Make the comment input field expand to fill available space */
   padding: 8px 12px;
   margin-right: 10px;
   border: 1px solid #ccc;
@@ -194,13 +285,15 @@ h1 {
 }
 
 .comment-input:focus {
-  border-color: #7e00c4; /* Change border color on focus */
+  border-color: #7e00c4;
+  /* Change border color on focus */
   outline: none;
 }
 
 .comment-button {
   padding: 8px 16px;
-  background-color: #952aff; /* Primary color */
+  background-color: #952aff;
+  /* Primary color */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -210,5 +303,36 @@ h1 {
 }
 
 .comment-button:hover {
-  background-color: #7e00c4; /* Darker primary color on hover */
+  background-color: #7e00c4;
+  /* Darker primary color on hover */
+}
+
+
+/* Add your CSS styles here */
+#websiteSection {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.calendar {
+  margin-bottom: 20px;
+}
+
+.news-section {
+  margin-top: 20px;
+}
+
+.news-section h3 {
+  margin-bottom: 10px;
+}
+
+.news-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-section li {
+  margin-bottom: 5px;
 }
