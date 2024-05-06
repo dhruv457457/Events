@@ -166,20 +166,20 @@
               <div  class="column ">
                 <div class="card">
                     <div class="img-container">
-                        <img src="material/Ayush ki tasvir.jpg" >
+                        <img src="material/Sidxwal.jpg" >
                     </div>
-                    <h3>Ayush Mathur</h3>
+                    <h3>Siddhant Khandelwal</h3>
                     <p>Founder</p>
                     <div class="icons">
-                        <a href="https://www.instagram.com/iam_ayushmathur_/">
+                        <a href="">
                            <i class="fa-brands fa-square-instagram"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/ayush-mathur-bb1a7a290/">
+                        <a href="">
                             <i class="fa-brands fa-linkedin"></i>
                          </a>
-                         <a href=" https://github.com/Ayush056github">
+                         <a href=" ">
                             <i class="fa-brands fa-github"></i>
-                         <a href="mailto:ayushmathur2021@gmail.com">
+                         <a href="">
                             <i class="fa-solid fa-envelope"></i>
                          </a>
                     </div>
@@ -252,9 +252,37 @@
     </div>
 </footer>
 
-<script src="js/script.js"></script>
 <script src="js/text.js"></script>
 <!-- Include EmailJS library -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    
+// for email js 
+// Initialize EmailJS with your public key
+emailjs.init("NK6QP-GbG6gGC05Oz"); // Replace YOUR_PUBLIC_KEY with your actual EmailJS public key
+
+// Handle form submission
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  // Prepare email parameters
+  var params = {
+    from_name: document.getElementById("name").value,
+    reply_to: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+  
+  // Send email using EmailJS
+  emailjs.send("service_vpxkrku", "template_50miuds", params)
+    .then(function(response) {
+      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("feedbackForm").reset();
+    }, function(error) {
+      alert("There was an error. Please try again later.");
+    });
+});
+
+
+</script>
 </body>
 </html>

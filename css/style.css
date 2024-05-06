@@ -7,10 +7,18 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   background-color: whitesmoke;
 }
-
+/* for colours  */
+:root{
+  --navcolour :  rgba(255, 255, 255, 0.5);
+  --colour : #952aff;
+  --bgcolour: whitesmoke;
+  --cardcolour : white ;
+  --seccolour : ;
+  --shadow :  rgba(0, 0, 0, 0.1) ;
+}
 /* for loader  */
 .loader-container {
   position: fixed;
@@ -95,58 +103,90 @@ body {
 }
 
 
-/* navbar starts from here  */
+/* Navbar styles */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--navcolour);
   backdrop-filter: blur(1px);
   height: 50px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
   padding: 0 20px;
-  position: absolute;
-  color: black;
-
 }
 
-#landing {
-  width: 100%;
-  height: 500px;
-}
-
-.right ul {
+nav ul {
   display: flex;
   list-style: none;
   gap: 30px;
   margin: 0;
 }
 
-.right ul li {
+nav ul li {
   display: flex;
   align-items: center;
 }
 
-.right ul li a {
+nav ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: color 0.3s;
 }
 
-.right ul li a:hover {
+nav ul li a:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* Search container styles */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 8px;
+  width: 200px; /* Adjust width as needed */
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: var(--navcolour);
+  backdrop-filter: blur(1px);
+}
+
+#suggestions {
+  position: absolute;
+  top: calc(100% + 5px); /* Position suggestions below the search bar */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.suggestion {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+#search-results {
+  margin-top: 20px;
+  text-align: center;
 }
 
 main {
   width: 100%;
   height: 500px;
-  background-color: #8a2be2;
-
-
 }
 
 .carousel-container {
@@ -173,8 +213,8 @@ main {
 
 section {
   width: 100%;
-  height: 370px;
-  background-color: whitesmoke;
+  height: 600px;
+  background-color: var(--bgcolour);
 }
 
 h1.ser {
@@ -186,11 +226,11 @@ h1.ser {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 590px;
   padding-top: 10px;
   justify-content: center;
-  gap: 30px;
-  background-color: whitesmoke;
+  gap: 81px;
+  background-color: var(--bgcolour);
 
 
 }
@@ -198,10 +238,10 @@ h1.ser {
 .card {
   width: 300px;
   height: 250px;
-  background-color: white;
+  background-color: var(--cardcolour);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px var(--shadow);
   transition: transform 0.3s;
 }
 
@@ -237,16 +277,16 @@ h1.ser {
 }
 
 .view-button:hover {
-  background-color: #8c00ff;
+  background-color: var(--colour);
 }
 
 .container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--bgcolour);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--shadow);
   border-radius: 8px;
 }
 
@@ -255,87 +295,32 @@ h1 {
   color: #333;
 }
 
-/* features starts from here  */
-.features-container{
-  padding: 50px;
-}
-.features {
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  padding: 14px 80px 18px 36px;
-  cursor: pointer;
-}
 
-.features:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-}
-
-.features h3 {
-  font-weight: 600;
-}
-
-.features img {
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  max-height: 120px;
-}
-
-.card-1 {
-  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-.card-2 {
-  background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-.card-3 {
-  background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 80px;
-}
-
-@media(max-width: 990px) {
-  .features {
-    margin: 20px;
-  }
-}
-
-/* features ends here */
 
 
 /* imp links from here  */
 .imp {
   width: 100%;
   height: 340px;
-  background-color: whitesmoke;
+  background-color: var(--bgcolour);
 }
 
 
 .card-container1 {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 170px;
   padding-top: 10px;
   justify-content: center;
   gap: 30px;
-  background-color: whitesmoke;
+  background-color: var(--bgcolour);
+
 }
 
 .card1 {
   width: 150px;
   height: 125px;
-  background-color: white;
+  background-color: var(--cardcolour);
   border-radius: 10px;
   transition: transform 0.3s;
 }
@@ -349,49 +334,6 @@ h1 {
 .card1:hover {
   transform: scale(1.05);
 }
-
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #952aff;
-  /*  #ccc */
-  padding-bottom: 20px;
-}
-
-.question {
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-}
-
-.answer {
-  display: none;
-  margin-top: 10px;
-  color: #666;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  max-height: 0;
-  overflow: hidden;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  opacity: 0;
-}
-
-.answer.show {
-  display: block;
-  max-height: 1000px;
-  opacity: 1;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  .faq-item {
-    margin-bottom: 15px;
-  }
-}
-
 
 
 /* footer starts from here  */
