@@ -27,11 +27,10 @@ body {
 }
 
 .sidebar h3 {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 24px;
   color: #f9f9f9;
-  /* Light text color */
 }
 
 .sidebar ul {
@@ -49,7 +48,7 @@ body {
   display: block;
   padding: 10px;
   color: #f9f9f9;
-  /* Light text color */
+  background-color: #5c5f7742;
   border-radius: 10px;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -64,7 +63,22 @@ body {
   width: 60px;
   /* Adjusted width for collapsed state */
 }
+.edit{
+  background-color: #5c5f77; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
+.edit:hover {
+  background-color: #952aff; /* Darker Green */
+}
 
 /*toggle button  */
 
@@ -122,10 +136,14 @@ body {
   display: none;
 }
 
+.main-container{
+  display: flex;
+}
 
 .main-content {
   flex: 1;
   padding: 20px;
+  width: 650px;
 }
 
 
@@ -314,8 +332,15 @@ h1 {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 290px;
 }
 
+#websiteSection h2{
+  background-color: #952affd3;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
 .calendar {
   margin-bottom: 20px;
 }
