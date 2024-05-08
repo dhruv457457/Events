@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fede6bdc;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 23px;
+    background-color: aliceblue;
+}
+
+.right ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.right ul li {
+    cursor: pointer;
+}
+
+.right ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    width: 33px;
+    height: 4px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .right ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fede6be6;
+        padding: 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    .right ul.show {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- nav bar starts -->
+<nav>
+    <div class="logo"></div>
+    <div class="right">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="study.html">Study Material</a></li>
+            <li><a href="roadmap.html">Roadmaps</a></li>
+            <li><a href="event.html">Events</a></li>
+        </ul>
+    </div>
+    <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+<!-- navbar ends -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const navList = document.querySelector('.right ul');
+
+        burger.addEventListener('click', function () {
+            if (navList.classList.contains('show')) {
+                navList.classList.remove('show');
+            } else {
+                navList.classList.add('show');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

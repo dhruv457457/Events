@@ -185,7 +185,18 @@
 
     <script src="js/script.js"></script>
     <script src="js/text.js"></script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.burger');
+            const navList = document.querySelector('.right ul');
+    
+            burger.addEventListener('click', function () {
+                navList.classList.toggle('show');
+            });
+        });
+    </script>
+    
+    
 </body>
 
 </html>
