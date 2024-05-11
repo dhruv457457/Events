@@ -119,26 +119,69 @@
             cursor: pointer;
             color: #777;
         }
-
+h2{
+    background-color: whitesmoke;
+    border: 5px;
+    width: 80px;
+}
         .youtube-video {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
-            margin-bottom: 20px;
+            height: 300px;
         }
 
         .youtube-video iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 50%;
             height: 100%;
             border-radius: 10px;
+            box-shadow: 0px 10px 15px  rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 10px;
+            width: 220px;
+        }
+
+        ol li {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+            width: 500px;
+        }
+
+        ul li {
+            list-style: none;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            font-weight: normal;
+            width: 449px;
+      
+
         }
 
         .feedback {
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         .correct {
@@ -192,7 +235,8 @@
             <div class="step__number">1</div>
             <div class="step__content">
                 <div class="step__title">HTML</div>
-                <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
+                <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.
+                </div>
             </div>
             <div class="arrow" onclick="openHTMLModal()">&#9654;</div>
         </div>
@@ -200,7 +244,8 @@
             <div class="step__number">2</div>
             <div class="step__content">
                 <div class="step__title">CSS</div>
-                <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
+                <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive
+                    design.</div>
             </div>
             <div class="arrow" onclick="openCSSModal()">&#9654;</div>
         </div>
@@ -212,10 +257,13 @@
         <div class="modal-content">
             <span class="close" onclick="closeHTMLModal()">&times;</span>
             <h2 class="modal-title">HTML</h2>
-            <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
+            <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.
+            </div>
             <div class="youtube-video">
                 <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
-                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
             <!-- HTML Sample Practice Questions -->
             <h3>Sample Practice Questions:</h3>
@@ -247,7 +295,8 @@
             <!-- Step Completion Checkbox -->
             <div class="completion">
                 <label for="html-step-completion">Step Completed:</label>
-                <input type="checkbox" id="html-step-completion" name="html-step-completion" onclick="updateProgress()" disabled>
+                <input type="checkbox" id="html-step-completion" name="html-step-completion" onclick="updateProgress()"
+                    disabled>
             </div>
         </div>
     </div>
@@ -257,10 +306,13 @@
         <div class="modal-content">
             <span class="close" onclick="closeCSSModal()">&times;</span>
             <h2 class="modal-title">CSS</h2>
-            <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
+            <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive
+                design.</div>
             <div class="youtube-video">
                 <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
-                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
             <!-- CSS Sample Practice Questions -->
             <h3>Sample Practice Questions:</h3>
@@ -292,7 +344,8 @@
             <!-- Step Completion Checkbox -->
             <div class="completion">
                 <label for="css-step-completion">Step Completed:</label>
-                <input type="checkbox" id="css-step-completion" name="css-step-completion" onclick="updateProgress()" disabled>
+                <input type="checkbox" id="css-step-completion" name="css-step-completion" onclick="updateProgress()"
+                    disabled>
             </div>
         </div>
     </div>
