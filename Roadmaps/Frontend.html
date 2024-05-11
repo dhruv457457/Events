@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Development Roadmap</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(0, 0, 0, 0.747);
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step__number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            font-size: 20px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .step__content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .step__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .step__description {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow:hover {
+            transform: scale(1.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            overflow: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease forwards;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .youtube-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 20px;
+        }
+
+        .youtube-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .completion {
+            margin-top: 20px;
+        }
+
+        .completion label {
+            font-weight: bold;
+        }
+
+        .progress-container {
+            margin-top: 30px;
+            background-color: #ddd;
+            border-radius: 5px;
+            height: 20px;
+            width: 50%;
+            position: relative;
+            margin-left: 25%;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Frontend Development Roadmap</h1>
+        <div class="step" id="step1">
+            <div class="step__number">1</div>
+            <div class="step__content">
+                <div class="step__title">HTML</div>
+                <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
+            </div>
+            <div class="arrow" onclick="openHTMLModal()">&#9654;</div>
+        </div>
+        <div class="step" id="step2">
+            <div class="step__number">2</div>
+            <div class="step__content">
+                <div class="step__title">CSS</div>
+                <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
+            </div>
+            <div class="arrow" onclick="openCSSModal()">&#9654;</div>
+        </div>
+        <!-- Add more steps here -->
+    </div>
+
+    <!-- HTML Modal -->
+    <div id="html-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHTMLModal()">&times;</span>
+            <h2 class="modal-title">HTML</h2>
+            <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- HTML Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="html-quiz-form">
+                <ol>
+                    <li>What does HTML stand for?
+                        <ul>
+                            <li><input type="radio" name="q1" value="correct">Hyper Text Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">Hyperlinks and Text Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">Home Tool Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">None of the above</li>
+                        </ul>
+                        <span id="html-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>Which tag is used to define an unordered list?
+                        <ul>
+                            <li><input type="radio" name="q2" value="correct">&lt;ul&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;ol&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;li&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;ul&gt; and &lt;ol&gt;</li>
+                        </ul>
+                        <span id="html-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more HTML questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkHTMLAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+            <div class="completion">
+                <label for="html-step-completion">Step Completed:</label>
+                <input type="checkbox" id="html-step-completion" name="html-step-completion" onclick="updateProgress()" disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- CSS Modal -->
+    <div id="css-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCSSModal()">&times;</span>
+            <h2 class="modal-title">CSS</h2>
+            <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- CSS Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="css-quiz-form">
+                <ol>
+                    <li>What does CSS stand for?
+                        <ul>
+                            <li><input type="radio" name="q1" value="incorrect">Cascading Script Styles</li>
+                            <li><input type="radio" name="q1" value="incorrect">Computer Style Sheets</li>
+                            <li><input type="radio" name="q1" value="correct">Cascading Style Sheets</li>
+                            <li><input type="radio" name="q1" value="incorrect">Creative Style Sheets</li>
+                        </ul>
+                        <span id="css-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>Which CSS property is used for changing the font color of an element?
+                        <ul>
+                            <li><input type="radio" name="q2" value="correct">color</li>
+                            <li><input type="radio" name="q2" value="incorrect">text-color</li>
+                            <li><input type="radio" name="q2" value="incorrect">font-color</li>
+                            <li><input type="radio" name="q2" value="incorrect">text-style</li>
+                        </ul>
+                        <span id="css-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more CSS questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkCSSAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+            <div class="completion">
+                <label for="css-step-completion">Step Completed:</label>
+                <input type="checkbox" id="css-step-completion" name="css-step-completion" onclick="updateProgress()" disabled>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress"></div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <script>
+        function openHTMLModal() {
+            document.getElementById("html-modal").style.display = "block";
+        }
+
+        function closeHTMLModal() {
+            document.getElementById("html-modal").style.display = "none";
+        }
+
+        function openCSSModal() {
+            document.getElementById("css-modal").style.display = "block";
+        }
+
+        function closeCSSModal() {
+            document.getElementById("css-modal").style.display = "none";
+        }
+
+        function skipQuestion() {
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(function (radio) {
+                radio.checked = false;
+            });
+        }
+
+        function checkHTMLAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("html-q1-feedback").textContent = "Correct";
+                document.getElementById("html-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("html-q1-feedback").textContent = "Incorrect";
+                document.getElementById("html-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("html-q2-feedback").textContent = "Correct";
+                document.getElementById("html-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("html-q2-feedback").textContent = "Incorrect";
+                document.getElementById("html-q2-feedback").classList.add("incorrect");
+            }
+
+            var percentage = (correctAnswers / 2) * 100;
+
+            if (percentage >= 80) {
+                document.getElementById("html-step-completion").disabled = false;
+            }
+        }
+
+        function checkCSSAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("css-q1-feedback").textContent = "Correct";
+                document.getElementById("css-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("css-q1-feedback").textContent = "Incorrect";
+                document.getElementById("css-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("css-q2-feedback").textContent = "Correct";
+                document.getElementById("css-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("css-q2-feedback").textContent = "Incorrect";
+                document.getElementById("css-q2-feedback").classList.add("incorrect");
+            }
+
+            var percentage = (correctAnswers / 2) * 100;
+
+            if (percentage >= 80) {
+                document.getElementById("css-step-completion").disabled = false;
+            }
+        }
+
+        function updateProgress() {
+            var totalSteps = document.querySelectorAll('.step').length;
+            var completedSteps = document.querySelectorAll('.completion input[type="checkbox"]:checked').length;
+            var progress = (completedSteps / totalSteps) * 100;
+
+            document.getElementById("progress").style.width = progress + "%";
+            document.getElementById("progressText").textContent = Math.round(progress) + "%";
+        }
+    </script>
+</body>
+
+</html>
