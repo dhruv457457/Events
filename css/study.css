@@ -7,20 +7,19 @@
 }
 
 /* navbar  */
-.logo {
-    width: 40px;
-    height: 23px;
-    background-color: aliceblue;
-}
-
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:#952affe1;
+    background-color: #952affe1;
     height: 50px;
+    padding: 0px;
+}
 
-    
+.logo {
+    width: 40px;
+    height: 23px;
+    background-color: aliceblue;
 }
 
 .right ul {
@@ -30,8 +29,6 @@ nav {
 }
 
 .right ul li {
-    display: flex;
-    align-items: center;
     cursor: pointer;
 }
 
@@ -40,7 +37,43 @@ nav {
     color: black;
 }
 
+.burger {
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    width: 33px;
+    height: 4px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .right ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #9830ff;
+        padding: 0 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    .right ul.show {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
 /* navbar ends */
+
 
 /* main starts */
 main {
@@ -56,6 +89,18 @@ main {
     font-size: 10vh;
     color: white
 }
+
+@media only screen and (max-width: 767px) {
+    main{
+        height: 300px;
+    }
+    #main-h1{
+        text-align: center;
+        justify-content: center;
+        font-size: 50px;
+    }
+}
+
 /* cards starts  */
 .card-container {
     display: flex;
@@ -111,6 +156,12 @@ main {
 
   .view-button:hover {
     background-color: #8c00ff;
+  }
+
+  @media only screen and (max-width: 767px){
+    .card-container{
+        height: 1930px;
+    }
   }
 
 
