@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>YT</title>
+    <link rel="stylesheet" href="css/Pyq papers.css">
+    <style>
+        /* Your existing CSS styles */
+        /* Styles for the progress bar */
+        #progressBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #c32aff, #952aff); /* Gradient colors */
+            z-index: 9999;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .box{
+            width: 100%;
+            height: 1000px;
+            background-color: green;
+        }
+    </style>
+</head> 
 <body>
-    
+    <!-- Progress bar -->
+    <div id="progressBar"></div>
+
+    <!-- Your existing HTML content -->
+    <!-- nav bar starts -->
+    <!-- Main content -->
+    <!-- Your image -->
+    <!-- Your iframes -->
+<div class="box"></div>
+    <!-- Your existing JavaScript if any -->
+    <script>
+        // JavaScript to handle progress bar
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.transform = `scaleX(${scrollProgress / 100})`;
+});
+
+    </script>
 </body>
 </html>
