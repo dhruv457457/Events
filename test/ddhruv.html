@@ -1,342 +1,628 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      background-color: #f8f9fa;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Development Roadmap</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .profile-card {
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
 
-    .profile-card img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      margin-right: 15px;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(0, 0, 0, 0.747);
+        }
 
-    .profile-card .details {
-      flex: 1;
-    }
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
 
-    .profile-card .details p {
-      margin: 0;
-    }
+        .step:hover {
+            transform: translateY(-5px);
+        }
 
-    .profile-card .details .name {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+        .step__number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            font-size: 20px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
 
-    .profile-card .details .location {
-      font-size: 0.9rem;
-    }
+        .step__content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-    .profile-card .bio {
-      margin-top: 10px;
-      color: #666;
-    }
+        .step__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-    .connected-socials-btn {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-size: 0.8rem;
-    }
+        .step__description {
+            line-height: 1.6;
+            color: #555;
+        }
 
-    .stat-card {
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-    .stat-card p {
-      margin: 0;
-    }
+        .arrow:hover {
+            transform: scale(1.2);
+        }
 
-    .stat-card .stat-label {
-      font-size: 0.8rem;
-      font-weight: bold;
-      color: #666;
-    }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            overflow: auto;
+            transition: opacity 0.3s ease;
+        }
 
-    .stat-card .stat-value {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease forwards;
+        }
 
-}
-</style>
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .youtube-video {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .youtube-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 10px;
+            width: 220px;
+        }
+
+        ol li {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+            width: 500px;
+        }
+
+        ul li {
+            list-style: none;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            font-weight: normal;
+            width: 449px;
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .completion {
+            margin-top: 20px;
+        }
+
+        .completion label {
+            font-weight: bold;
+        }
+
+        .progress-container {
+            margin-top: 5%;
+            background-color: #ddd;
+            border-radius: 5px;
+            height: 20px;
+            width: 50%;
+            position: relative;
+            margin-left: 25%;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-      <div class="flex flex-wrap -mx-4">
-      <div class="w-full lg:w-1/3 px-4 mb-4 lg:mb-0">
-          <div class="profile-card">
-          <div class="flex items-center">
-            <img class="h-16 w-16 rounded-full" src="https://placehold.co/64x64" alt="Profile picture">
-            <div class="details">
-              <p class="name">Natalie Wheeler</p>
-              <p class="location">San Francisco CA</p>
-            </div>
-          </div>
-          <div class="bio">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <div class="mt-4">
-            <button class="connected-socials-btn">Connected Socials</button>
-          </div>
-        </div>
+    <div class="container">
+      <h1>Frontend Development Roadmap</h1>
+      <div class="progress-container">
+          <div class="progress-bar" id="progress"></div>
+          <div class="progress-text" id="progressText">0%</div>
       </div>
-
-      <div class="w-full lg:w-2/3 px-4">
-        <div class="flex flex-wrap -mx-2">
-          <div class="w-full md:w-1/2 px-2 mb-4">
-            <div class="stat-card">
-              <p class="stat-label">Total Facebook Page Likes</p>
-              <p class="stat-value">459K</p>
+        <div class="step" id="step1">
+            <div class="step__number">1</div>
+            <div class="step__content">
+                <div class="step__title">HTML</div>
+                <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
             </div>
-          </div>
-          <div class="w-full md:w-1/2 px-2 mb-4">
-              <div class="stat-card">
-              <p class="stat-label">Total Engagement</p>
-              <p class="stat-value">273K</p>
-            </div>
+            <div class="arrow" onclick="openHTMLModal()">&#9654;</div>
         </div>
-        <div class="w-full md:w-1/2 px-2 mb-4">
-            <div class="stat-card">
-              <p class="stat-label">Total Reach</p>
-              <p class="stat-value">682K</p>
+        <div class="step" id="step2">
+            <div class="step__number">2</div>
+            <div class="step__content">
+                <div class="step__title">CSS</div>
+                <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
             </div>
-          </div>
-          <div class="w-full md:w-1/2 px-2 mb-4">
-            <div class="stat-card">
-              <p class="stat-label">Unique Page Views</p>
-              <p class="stat-value">142K</p>
+            <div class="arrow" onclick="openCSSModal()">&#9654;</div>
+        </div>
+        <div class="step" id="step3">
+            <div class="step__number">3</div>
+            <div class="step__content">
+                <div class="step__title">JavaScript</div>
+                <div class="step__description">Learn JavaScript fundamentals including DOM manipulation, events, and ES6 features.</div>
             </div>
+            <div class="arrow" onclick="openJavaScriptModal()">&#9654;</div>
         </div>
+        <div class="step" id="step4">
+            <div class="step__number">4</div>
+            <div class="step__content">
+                <div class="step__title">React.js</div>
+                <div class="step__description">Master React.js, a popular JavaScript library for building user interfaces.</div>
+            </div>
+            <div class="arrow" onclick="openReactModal()">&#9654;</div>
         </div>
-      </div>
+        <!-- Add more steps here -->
     </div>
--->
 
-<!DOCTYPE html>
-<html lang="en">
-    
-    <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Profile</title>
-   <style>
-     body {
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       color: #333;
-       background-color: #f8f9fa;
-    }
- 
-    .container {
-       max-width: 1200px;
-       margin: 0 auto;
-       padding: 20px;
-       display: flex;
-       flex-wrap: wrap;
-    }
- 
-    .profile-card {
-       width: 100%;
-       max-width: 400px; /* Adjust as needed */
-       background-color: #fff;
-       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-       border-radius: 8px;
-       padding: 20px;
-       margin-right: px;
-       margin-bottom: 20px;
-    }
-    
-    .profile-card img {
-        width: 64px;
-       height: 64px;
-       border-radius: 50%;
-       margin-right: 15px;
-     }
- 
-     .profile-card .details {
-         flex: 1;
-     }
- 
-     .profile-card .details p {
-         margin: 0;
+    <!-- HTML Modal -->
+    <div id="html-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHTMLModal()">&times;</span>
+            <h2 class="modal-title">HTML</h2>
+            <div class="step__description">Learn the basics of HTML, including semantic elements and best practices.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- HTML Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="html-quiz-form">
+                <ol>
+                    <li>What does HTML stand for?
+                        <ul>
+                            <li><input type="radio" name="q1" value="correct">Hyper Text Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">Hyperlinks and Text Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">Home Tool Markup Language</li>
+                            <li><input type="radio" name="q1" value="incorrect">None of the above</li>
+                        </ul>
+                        <span id="html-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>Which tag is used to define an unordered list?
+                        <ul>
+                            <li><input type="radio" name="q2" value="correct">&lt;ul&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;ol&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;li&gt;</li>
+                            <li><input type="radio" name="q2" value="incorrect">&lt;ul&gt; and &lt;ol&gt;</li>
+                        </ul>
+                        <span id="html-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more HTML questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkHTMLAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+            <div class="completion">
+                <label for="html-step-completion">Step Completed:</label>
+                <input type="checkbox" id="html-step-completion" name="html-step-completion" onclick="updateProgress()"
+                    disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- CSS Modal -->
+    <div id="css-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCSSModal()">&times;</span>
+            <h2 class="modal-title">CSS</h2>
+            <div class="step__description">Master CSS styling techniques, including Flexbox, Grid, and responsive design.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- CSS Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="css-quiz-form">
+                <ol>
+                    <li>What does CSS stand for?
+                        <ul>
+                            <li><input type="radio" name="q1" value="incorrect">Cascading Script Styles</li>
+                            <li><input type="radio" name="q1" value="incorrect">Computer Style Sheets</li>
+                            <li><input type="radio" name="q1" value="correct">Cascading Style Sheets</li>
+                            <li><input type="radio" name="q1" value="incorrect">Creative Style Sheets</li>
+                        </ul>
+                        <span id="css-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>Which CSS property is used for changing the font color of an element?
+                        <ul>
+                            <li><input type="radio" name="q2" value="correct">color</li>
+                            <li><input type="radio" name="q2" value="incorrect">text-color</li>
+                            <li><input type="radio" name="q2" value="incorrect">font-color</li>
+                            <li><input type="radio" name="q2" value="incorrect">text-style</li>
+                        </ul>
+                        <span id="css-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more CSS questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkCSSAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+            <div class="completion">
+                <label for="css-step-completion">Step Completed:</label>
+                <input type="checkbox" id="css-step-completion" name="css-step-completion" onclick="updateProgress()"
+                    disabled>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Modal -->
+    <div id="javascript-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeJavaScriptModal()">&times;</span>
+            <h2 class="modal-title">JavaScript</h2>
+            <div class="step__description">Learn JavaScript fundamentals including DOM manipulation, events, and ES6 features.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- JavaScript Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="javascript-quiz-form">
+                <ol>
+                    <li>What is the syntax for creating a function in JavaScript?
+                        <ul>
+                            <li><input type="radio" name="q1" value="correct">function myFunction()</li>
+                            <li><input type="radio" name="q1" value="incorrect">myFunction = function()</li>
+                            <li><input type="radio" name="q1" value="incorrect">myFunction()</li>
+                            <li><input type="radio" name="q1" value="incorrect">func myFunction()</li>
+                        </ul>
+                        <span id="javascript-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>Which method is used to add a new element to an array in JavaScript?
+                        <ul>
+                            <li><input type="radio" name="q2" value="incorrect">append()</li>
+                            <li><input type="radio" name="q2" value="correct">push()</li>
+                            <li><input type="radio" name="q2" value="incorrect">addTo()</li>
+                            <li><input type="radio" name="q2" value="incorrect">addElement()</li>
+                        </ul>
+                        <span id="javascript-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more JavaScript questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkJavaScriptAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+            <div class="completion">
+                <label for="javascript-step-completion">Step Completed:</label>
+                <input type="checkbox" id="javascript-step-completion" name="javascript-step-completion" onclick="updateProgress()"
+                    disabled>
+            </div>
+        </div>
+        <div class="completion">
+            <label for="react-step-completion">Step Completed:</label>
+            <input type="checkbox" id="react-step-completion" name="react-step-completion" onclick="updateProgress()"
+                disabled>
+        </div>
+    </div>
+
+    <!-- React.js Modal -->
+    <div id="react-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReactModal()">&times;</span>
+            <h2 class="modal-title">React.js</h2>
+            <div class="step__description">Master React.js, a popular JavaScript library for building user interfaces.</div>
+            <div class="youtube-video">
+                <!-- Replace 'VIDEO_ID' with the actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/tVzUXW6siu0" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- React.js Sample Practice Questions -->
+            <h3>Sample Practice Questions:</h3>
+            <form id="react-quiz-form">
+                <ol>
+                    <li>What is JSX in React?
+                        <ul>
+                            <li><input type="radio" name="q1" value="correct">A syntax extension for JavaScript</li>
+                            <li><input type="radio" name="q1" value="incorrect">A new language</li>
+                            <li><input type="radio" name="q1" value="incorrect">A stylesheet language</li>
+                            <li><input type="radio" name="q1" value="incorrect">A data storage format</li>
+                        </ul>
+                        <span id="react-q1-feedback" class="feedback"></span>
+                    </li>
+                    <li>What is the main benefit of using React Hooks?
+                        <ul>
+                            <li><input type="radio" name="q2" value="correct">Hooks allow you to use state and other React features without writing a class.</li>
+                            <li><input type="radio" name="q2" value="incorrect">Hooks replace components entirely.</li>
+                            <li><input type="radio" name="q2" value="incorrect">Hooks are used for styling components in React.</li>
+                            <li><input type="radio" name="q2" value="incorrect">Hooks are used for routing in React.</li>
+                        </ul>
+                        <span id="react-q2-feedback" class="feedback"></span>
+                    </li>
+                    <!-- Add more React.js questions here -->
+                </ol>
+                <button type="button" onclick="skipQuestion()">Skip</button>
+                <button type="button" onclick="checkReactAnswers()">Check Answers</button>
+            </form>
+            <!-- Step Completion Checkbox -->
+        </div>
+    </div>
+
+
+    <script>
+        function openHTMLModal() {
+            document.getElementById("html-modal").style.display = "block";
         }
- 
-    .profile-card .details .name {
-       font-size: 1.2rem;
-       font-weight: bold;
-     }
-     
-     .profile-card .details .location {
-       font-size: 0.9rem;
-     }
-     
-     .profile-card .bio {
-         margin-top: 10px;
-       color: #666;
-     }
-     
-     .connected-socials-btn {
-       background-color: #007bff;
-       color: #fff;
-       border: none;
-       border-radius: 5px;
-       padding: 5px 10px;
-       cursor: pointer;
-       font-size: 0.8rem;
-    }
- 
-     .stat-cards-container {
-       flex: 1;
-       display: flex;
-       flex-wrap: wrap;
-    }
-    
-    .stat-card {
-       width: 100%;
-       background-color: #fff;
-       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-       border-radius: 8px;
-       padding: 20px;
-       margin-left: 3rem;
-       margin-bottom: 20px;
-    }
-    
-    .stat-card p {
-        margin: 0;
-     }
-     
-     .stat-card .stat-label {
-         font-size: 0.8rem;
-       font-weight: bold;
-       color: #666;
-    }
- 
-    .stat-card .stat-value {
-       font-size: 1.2rem;
-       font-weight: bold;
-    }
-    .video-card {
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    
-    .video-card img {
-      width: 40%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    
-    .video-card h3 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: bold;
-    }
-    
-    .video-card .video-stats {
-      font-size: 1.rem;
-      color: #666;}
-    </style>
- </head>
- 
- <body>
-   <div class="container">
-       <div class="profile-card">
-           <div class="flex items-center">
-               <img class="h-16 w-16 rounded-full" src="https://placehold.co/64x64" alt="Profile picture">
-               <div class="details">
-                   <p class="name">Dhruv Pancholi</p>
-                   <p class="location">Jaipur,Rajasthan</p>
-                </div>
-            </div>
-            <div class="bio">
-         <p>
-            With a deep passion towards computer and technology, I introduce myself as a person trying to get better at everything gradually. 
-I am currently enrolled in Poornima College of Engeneering for my BTech in Information Technology. <br>
 
+        function closeHTMLModal() {
+            document.getElementById("html-modal").style.display = "none";
+        }
 
-            </p>
-        </div>
-        <div class="mt-4">
-            <button class="connected-socials-btn">Follow+</button>
-        </div>
-    </div>
-    
-    <div class="stat-cards-container">
-        <div class="stat-card">
-         <p class="stat-label">Total Event Organize</p>
-         <p class="stat-value">1</p>
-        </div>
-        
-        <div class="stat-card">
-         <p class="stat-label">Total Event Attend</p>
-         <p class="stat-value">7</p>
-       </div>
-       
-       <div class="stat-card">
-         <p class="stat-label">Total Achivement</p>
-         <p class="stat-value">2</p>
-        </div>
-        
-        <div class="stat-card">
-         <p class="stat-label">Follower</p>
-         <p class="stat-value">0</p>
-        </div>
-    </div>
-</div>
-<div class="mt-8" style="margin-left: 3rem;" >
-  <h2 class="text-xl font-semibold mb-4" style="margin-left: 1rem;" >Gallery</h2>
-  <div class="flex flex-wrap -mx-4">
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
-       <div class="video-card">
-        <img class="rounded-lg mb-4" src="https://placehold.co/300x200" alt="Video thumbnail">
-         <h3 class="text-lg font-semibold mb-2">36-hour HIS</h3>
-        <div class="video-stats">
-          <span>197K views</span>
-          <span class="mx-2">•</span>
-          <span>4K likes</span>
-          <span class="mx-2">•</span>
-          <span>2K dislikes</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        function openCSSModal() {
+            document.getElementById("css-modal").style.display = "block";
+        }
+
+        function closeCSSModal() {
+            document.getElementById("css-modal").style.display = "none";
+        }
+
+        function openJavaScriptModal() {
+            document.getElementById("javascript-modal").style.display = "block";
+        }
+
+        function closeJavaScriptModal() {
+            document.getElementById("javascript-modal").style.display = "none";
+        }
+
+        function openReactModal() {
+            document.getElementById("react-modal").style.display = "block";
+        }
+
+        function closeReactModal() {
+            document.getElementById("react-modal").style.display = "none";
+        }
+
+        function skipQuestion() {
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(function (radio) {
+                radio.checked = false;
+            });
+        }
+
+        function checkHTMLAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("html-q1-feedback").textContent = "Correct";
+                document.getElementById("html-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("html-q1-feedback").textContent = "Incorrect";
+                document.getElementById("html-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("html-q2-feedback").textContent = "Correct";
+                document.getElementById("html-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("html-q2-feedback").textContent = "Incorrect";
+                document.getElementById("html-q2-feedback").classList.add("incorrect");
+            }
+
+            if (correctAnswers === 2) {
+                document.getElementById("html-step-completion").checked = true;
+            }
+
+            updateProgress();
+        }
+
+        function checkCSSAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("css-q1-feedback").textContent = "Correct";
+                document.getElementById("css-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("css-q1-feedback").textContent = "Incorrect";
+                document.getElementById("css-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("css-q2-feedback").textContent = "Correct";
+                document.getElementById("css-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("css-q2-feedback").textContent = "Incorrect";
+                document.getElementById("css-q2-feedback").classList.add("incorrect");
+            }
+
+            if (correctAnswers === 2) {
+                document.getElementById("css-step-completion").checked = true;
+            }
+
+            updateProgress();
+        }
+
+        function checkJavaScriptAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("javascript-q1-feedback").textContent = "Correct";
+                document.getElementById("javascript-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("javascript-q1-feedback").textContent = "Incorrect";
+                document.getElementById("javascript-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("javascript-q2-feedback").textContent = "Correct";
+                document.getElementById("javascript-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("javascript-q2-feedback").textContent = "Incorrect";
+                document.getElementById("javascript-q2-feedback").classList.add("incorrect");
+            }
+
+            if (correctAnswers === 2) {
+                document.getElementById("javascript-step-completion").checked = true;
+            }
+
+            updateProgress();
+        }
+
+        function checkReactAnswers() {
+            var correctAnswers = 0;
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (q1Answer && q1Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("react-q1-feedback").textContent = "Correct";
+                document.getElementById("react-q1-feedback").classList.add("correct");
+            } else {
+                document.getElementById("react-q1-feedback").textContent = "Incorrect";
+                document.getElementById("react-q1-feedback").classList.add("incorrect");
+            }
+            if (q2Answer && q2Answer.value === "correct") {
+                correctAnswers++;
+                document.getElementById("react-q2-feedback").textContent = "Correct";
+                document.getElementById("react-q2-feedback").classList.add("correct");
+            } else {
+                document.getElementById("react-q2-feedback").textContent = "Incorrect";
+                document.getElementById("react-q2-feedback").classList.add("incorrect");
+            }
+
+            if (correctAnswers === 2) {
+                document.getElementById("react-step-completion").checked = true;
+            }
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            var completedSteps = document.querySelectorAll('.completion input[type="checkbox"]:checked').length;
+            var totalSteps = document.querySelectorAll('.completion input[type="checkbox"]').length;
+            var progress = Math.round((completedSteps / totalSteps) * 100);
+
+            document.getElementById("progress").style.width = progress + "%";
+            document.getElementById("progressText").textContent = progress + "%";
+        }
+    </script>
 </body>
 
 </html>
