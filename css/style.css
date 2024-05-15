@@ -10,15 +10,17 @@ body {
   /* font-family: 'Poppins', sans-serif; */
   background-color: whitesmoke;
 }
+
 /* for colours  */
-:root{
-  --navcolour :  rgba(255, 255, 255, 0.5);
-  --colour : #952aff;
+:root {
+  --navcolour: rgba(255, 255, 255, 0.5);
+  --colour: #952aff;
   --bgcolour: whitesmoke;
-  --cardcolour : white ;
-  --seccolour : ;
-  --shadow :  rgba(0, 0, 0, 0.1) ;
+  --cardcolour: white;
+  --seccolour: ;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
+
 /* for loader  */
 .loader-container {
   position: fixed;
@@ -61,7 +63,8 @@ body {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(to right, #c32aff, #952aff); /* Gradient colors */
+  background: linear-gradient(to right, #c32aff, #952aff);
+  /* Gradient colors */
   z-index: 9999;
   transform-origin: left;
   transform: scaleX(0);
@@ -163,7 +166,8 @@ nav ul li a:hover {
 
 #search-input {
   padding: 8px;
-  width: 200px; /* Adjust width as needed */
+  width: 200px;
+  /* Adjust width as needed */
   font-size: 16px;
   border: none;
   outline: none;
@@ -174,7 +178,8 @@ nav ul li a:hover {
 
 #suggestions {
   position: absolute;
-  top: calc(100% + 5px); /* Position suggestions below the search bar */
+  top: calc(100% + 5px);
+  /* Position suggestions below the search bar */
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -193,19 +198,21 @@ nav ul li a:hover {
 }
 
 #search-results {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   text-align: center;
 }
 
 main {
   width: 100%;
   height: 500px;
+  
 }
 
 .carousel-container {
   overflow: hidden;
   width: 100%;
   height: 500px;
+
   /* Adjust the height as needed */
 }
 
@@ -293,14 +300,15 @@ h1.ser {
   background-color: var(--colour);
 }
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
+/* faq from here */
+.faq-container {
+  max-width: 70vw;
+   margin: 50px auto;
   padding: 20px;
-  background: var(--bgcolour);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px var(--shadow);
-  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 h1 {
@@ -308,8 +316,46 @@ h1 {
   color: #333;
 }
 
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #952aff;
+  padding-bottom: 20px;
+}
+
+.question {
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+  color: #666;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.answer.show {
+  display: block;
+  max-height: 1000px;
+  opacity: 1;
+}
 
 
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+  }
+}
+
+/* faq ends  */
 
 /* imp links from here  */
 .imp {
@@ -403,17 +449,18 @@ h1 {
   font-size: 14px;
 }
 
- /* footer ends here  */
+/* footer ends here  */
 
- /* online offliune starts from here   */
- #state {
+/* online offliune starts from here   */
+#state {
   position: fixed;
   bottom: 0px;
- z-index: 9999;
- width: 100%;
+  z-index: 9999;
+  width: 100%;
 }
 
-#online, #offline {
+#online,
+#offline {
   position: relative;
   background-color: rgb(31, 161, 31);
   padding: 5px;

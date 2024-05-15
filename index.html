@@ -141,6 +141,32 @@
 
     </section>
 
+    <!-- faq starts from here  -->
+    <div class="faq-container">
+        <h1 class="faq-h1">Frequently Asked Questions</h1> <br>
+        <div class="faq-item">
+            <div class="question">Does [] have a mobile app available?</div>
+            <div class="answer">To further improve convenience, we're in the process of creating a mobile
+                application
+                for [].</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">How do I participate in the events that are coming up?</div>
+            <div class="answer">Our website normally posts information about upcoming events well in
+                advance.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">How can I make recommendations or comments to make the study materials and
+                events
+                better?</div>
+            <div class="answer">We greatly value your input! We are open to recommendations on how to make
+                our courses,
+                study guides, and events better overall. Please use our contact page to get in touch with
+                us, or take
+                part in our conversations and feedback surveys.</div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </div>
 
     <!-- some important links from here  -->
     <div class="imp">
@@ -315,6 +341,17 @@
                 }
             });
 
+        </script>
+        <script>
+                    // JavaScript for toggling the display of answers
+const questions = document.querySelectorAll('.question');
+
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('show');
+    });
+});
         </script>
 
 </body>
